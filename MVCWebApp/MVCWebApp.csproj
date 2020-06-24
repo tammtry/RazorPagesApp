@@ -146,6 +146,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Enums\ImeTipa.cs" />
+    <Compile Include="Models\Enums\Pol.cs" />
+    <Compile Include="Models\Enums\Uloga.cs" />
+    <Compile Include="Models\Karta.cs" />
+    <Compile Include="Models\Korisnik.cs" />
+    <Compile Include="Models\Manifestacija.cs" />
+    <Compile Include="Models\TipKorisnika.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -188,7 +195,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
