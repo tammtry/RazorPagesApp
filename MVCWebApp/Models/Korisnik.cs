@@ -15,7 +15,7 @@ namespace MVCWebApp.Models
         private string datumRodjenja; //probaj preko odredjenog formata "21.12.1997." 
         private Pol pol;
         private Uloga uloga;
-        private List<Karta> rezervisaneKarte; //ako je korisnik KUPAC
+        private List<Karta> sveKarteBezObziraNaStatus; //ako je korisnik KUPAC
         private List<Manifestacija> manifestacije; //ako je korisnik PRODAVAC
         private double brojBodova;  //sakupljeni bodovi ako je korisnik KUPAC
         private TipKorisnika tipKorisnika;
@@ -28,7 +28,7 @@ namespace MVCWebApp.Models
         public string DatumRodjenja { get => datumRodjenja; set => datumRodjenja = value; }
         public Pol Pol { get => pol; set => pol = value; }
         public Uloga Uloga { get => uloga; set => uloga = value; }
-        public List<Karta> RezervisaneKarte { get => rezervisaneKarte; set => rezervisaneKarte = value; }
+        public List<Karta> SveKarteBezObziraNaStatus { get => sveKarteBezObziraNaStatus; set => sveKarteBezObziraNaStatus = value; }
         public List<Manifestacija> Manifestacije { get => manifestacije; set => manifestacije = value; }
         public double BrojBodova { get => brojBodova; set => brojBodova = value; }
         public TipKorisnika TipKorisnika { get => tipKorisnika; set => tipKorisnika = value; }
