@@ -7,16 +7,16 @@ using System.Web.Mvc;
 
 namespace MVCWebApp.Controllers
 {
-    public class LoginController : Controller
+    public class AdministratorController : Controller
     {
-        // GET: Login
+        // GET: Administrator
         public ActionResult Index()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult Login(Korisnik k)
+        public ActionResult AboutAdministrator(Administrator administrator)
         {
             Korisnici korisnici = (Korisnici)Session["korisnici"];
 
@@ -24,19 +24,11 @@ namespace MVCWebApp.Controllers
             {
                 korisnici = new Korisnici();
                 Session["korisnici"] = korisnici;
-            }         
-
-            if (korisnici.SearchForAdministrator(k.KorisnickoIme, k.Lozinka))
-            {
-                ViewBag.korisnicko_ime = korisnici.AddAdmin(k);
-
-                return View("AdminLogin");
             }
+            ViewBag.korisnicko_ime = korisnici.AddAdmin(administrator);
+            ViewBag.AdminPodaci = korisnici.IscitajAdministratora(ViewBag.korisnicko_ime);
 
-            else
-            {
-                return View("Error");
-            }
+            return View();
         }
     }
 }

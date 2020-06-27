@@ -1,0 +1,30 @@
+﻿<html >
+
+    <head>
+
+    </head>
+
+    <body  style="margin-top: 20px;">
+
+        <div>
+            <form action="/Administrator/AboutAdministrator" method="post">
+                <div>
+                    <label for="KorisnickoIme" class="text-info">Administrator username: @ViewBag.korisnicko_ime</label><br><br /><br />
+                    <input type="hidden" value=@ViewBag.korisnicko_ime name="KorisnickoIme" />
+                    <input class="btn btn-danger" type="submit" value="User details" />
+                </div>        
+            </form>
+        </div>      
+
+        <div>
+            <form action="/Administrator/AddProdavac" method="post">
+                <div>
+                    <br />
+                    <input class="btn btn-danger" type="submit" value="Add seller" />
+                </div>             
+            </form>         
+        </div>
+
+    </body>
+
+</html>

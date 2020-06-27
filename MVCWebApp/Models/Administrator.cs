@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCWebApp.Models.Enums;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -20,6 +21,14 @@ namespace MVCWebApp.Models
             //BrojBodova = 0;
             //Manifestacije = new List<Manifestacija>();
             TipKorisnika = new TipKorisnika(); //da li je ovo uopste potrebno kod administratora?!
+        }
+
+        public Administrator(string k, string l, string i, string p)
+        {
+            KorisnickoIme = k;
+            Lozinka = l;
+            Ime = i;
+            Prezime = p;
         }
     }
 }
