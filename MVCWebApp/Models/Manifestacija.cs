@@ -36,5 +36,10 @@ namespace MVCWebApp.Models
             MestoOdrzavanja = mo;
             PosterManifestacije = poster;
         }
+
+        private Manifestacija()
+        {
+
+        }
     }
 }

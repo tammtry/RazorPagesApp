@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKupac xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Kupac>
+    <KorisnickoIme>sanja27</KorisnickoIme>
+    <Lozinka>27</Lozinka>
+    <Ime>Sanja</Ime>
+    <Prezime>Trivunic</Prezime>
+    <DatumRodjenja>1970-06-27</DatumRodjenja>
+    <Pol>ZENSKO</Pol>
+    <Uloga>KUPAC</Uloga>
+    <SveKarteBezObziraNaStatus />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Kupac>
+</ArrayOfKupac>

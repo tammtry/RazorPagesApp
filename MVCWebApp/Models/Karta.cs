@@ -34,5 +34,17 @@ namespace MVCWebApp.Models
             StatusKarte = statusK;
             TipKarte = tipK;
         }
+
+        private Karta()
+        {
+            IdKarte = "";
+            ManifestacijaZaKojuJeRezervisana = new Manifestacija("", TipManifestacije.FESTIVAL, 0, "", Status.NEAKTIVNO, null, "");
+            DatumIVremeManifestacije = "21.12.1997.";
+            CenaKarte = "244,00 dinara";
+            Kupac = "Tamara";
+            StatusKarte = StatusKarte.REZERVISANA;
+            TipKarte = TipKarte.FANPIT;
+
+        }
     }
 }
