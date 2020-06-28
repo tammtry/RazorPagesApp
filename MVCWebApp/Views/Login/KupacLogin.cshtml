@@ -1,0 +1,21 @@
+﻿<html>
+
+<head>
+
+</head>
+
+<body style="margin-top: 20px;">
+
+    <div>
+        <form action="/Kupac/AboutKupac" method="post">
+            <div>
+                <label for="KorisnickoIme" class="text-info">Kupac username: @ViewBag.korisnicko_ime</label><br><br /><br />
+                <input type="hidden" value=@ViewBag.korisnicko_ime name="KorisnickoIme" />
+                <input class="btn btn-danger" type="submit" value="User details" />
+            </div>
+        </form>
+    </div>
+
+</body>
+
+</html>

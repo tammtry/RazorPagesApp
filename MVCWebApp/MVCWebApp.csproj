@@ -145,6 +145,7 @@
     <Compile Include="Controllers\AdministratorController.cs" />
     <Compile Include="Controllers\ClientController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\KupacController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\RegistrationController.cs" />
     <Compile Include="Global.asax.cs">
@@ -172,6 +173,7 @@
     <Compile Include="XMLMethods\AdministratorXML.cs" />
     <Compile Include="XMLMethods\KorisnikXML.cs" />
     <Compile Include="XMLMethods\KupacXML.cs" />
+    <Compile Include="XMLMethods\ProdavacXML.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
@@ -183,6 +185,7 @@
     <Content Include="Models\XML\Administratori.xml" />
     <Content Include="Models\XML\Korisnici.xml" />
     <Content Include="Models\XML\Kupci.xml" />
+    <Content Include="Models\XML\Prodavci.xml" />
     <Content Include="Scripts\bootstrap.daterangepicker\daterangepicker.js" />
     <Content Include="Scripts\bootstrap.daterangepicker\daterangepicker.min.js" />
     <Content Include="Scripts\bootstrap.daterangepicker\moment.min.js" />
@@ -240,6 +243,11 @@
     <Content Include="Views\Registration\Error.cshtml" />
     <Content Include="Views\Login\AdminLogin.cshtml" />
     <Content Include="Views\Administrator\AboutAdministrator.cshtml" />
+    <Content Include="Views\Administrator\SaveAdminInfo.cshtml" />
+    <Content Include="Views\Login\KupacLogin.cshtml" />
+    <Content Include="Views\Kupac\AboutKupac.cshtml" />
+    <Content Include="Views\Kupac\SaveKupacInfo.cshtml" />
+    <Content Include="Views\Administrator\AddProdavac.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

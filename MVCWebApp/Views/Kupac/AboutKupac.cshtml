@@ -7,35 +7,35 @@
 </head>
 
 <body>
-    <form class="form-horizontal" role="form" action="/Administrator/SaveAdminInfo" method="post">
+    <form class="form-horizontal" role="form" action="/Kupac/SaveKupacInfo" method="post">
         <div class="form-group">
             <label class="col-lg-3 control-label">First name: </label>
             <div class="col-lg-8">
-                <input class="form-control" type="text" name="Ime" value="@ViewBag.AdminPodaci.Ime">
+                <input class="form-control" type="text" name="Ime" value="@ViewBag.KupacPodaci.Ime">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Last name: </label>
             <div class="col-lg-8">
-                <input class="form-control" type="text" name="Prezime" value="@ViewBag.AdminPodaci.Prezime">
+                <input class="form-control" type="text" name="Prezime" value="@ViewBag.KupacPodaci.Prezime">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Username: </label>
             <div class="col-lg-8">
-                <input class="form-control" type="text" name="KorisnickoIme" value="@ViewBag.AdminPodaci.KorisnickoIme">
+                <input class="form-control" type="text" name="KorisnickoIme" value="@ViewBag.KupacPodaci.KorisnickoIme">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label">Password: </label>
             <div class="col-lg-8">
-                <input class="form-control" type="text" name="Lozinka" value="@ViewBag.AdminPodaci.Lozinka">
+                <input class="form-control" type="text" name="Lozinka" value="@ViewBag.KupacPodaci.Lozinka">
             </div>
         </div>
         <div class="form-group">
             <label class="col-lg-3 control-label"></label>
             <div class="col-lg-8">
-                <input type="hidden" value=@ViewBag.AdminPodaci.KorisnickoIme name="KorisnickoIme" />
+                <input type="hidden" value=@ViewBag.KupacPodaci.KorisnickoIme name="KorisnickoIme" />
                 <input class="btn btn-danger" type="submit" value="Save" name="Save">
             </div>
         </div>

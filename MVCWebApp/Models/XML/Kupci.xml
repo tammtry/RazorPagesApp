@@ -6,9 +6,10 @@
     <Ime>Sanja</Ime>
     <Prezime>Trivunic</Prezime>
     <DatumRodjenja>1970-06-27</DatumRodjenja>
-    <Pol>ZENSKO</Pol>
+    <Pol>MUSKO</Pol>
     <Uloga>KUPAC</Uloga>
     <SveKarteBezObziraNaStatus />
+    <Manifestacije />
     <BrojBodova>0</BrojBodova>
     <TipKorisnika>
       <ImeTipa>ZLATNI</ImeTipa>

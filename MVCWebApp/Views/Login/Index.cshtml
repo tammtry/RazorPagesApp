@@ -1,29 +1,20 @@
-﻿
-@{
-    ViewBag.Title = "Index";
-}
-<h2>Index</h2>
-<html>
+﻿<html>
 
 <head>
-    <link rel="stylesheet" href="~/Scripts/StyleSheet2.css">
+   
 </head>
 
 <body>
-    <div style="text-align: center; ">
+    <div style="text-align: center; margin-top: 40px; ">
         <form method="post" action="/Login/Login">
-            <input type="text" name="KorisnickoIme" id="KorisnickoIme" placeholder="Korisnicko ime" required="">
-            <br />
-            <br />
-            <input type="password" name="Lozinka" id="Lozinka" placeholder="Lozinka" required="">
-            <br />
-            <br />
+            <input type="text" name="KorisnickoIme" id="KorisnickoIme" placeholder="Username" required=""><br /><br />
+            <input type="password" name="Lozinka" id="Lozinka" placeholder="Password" required=""><br /><br />
             <input type="submit" name="Login" id="Login" value="Login">
         </form>
         <br />
-        <a href="/Client/Index">Nazad na pocetnu</a>
+        <a href="/Client/Index">HOME PAGE</a>
     </div>
-
 </body>
+
 </html>
 

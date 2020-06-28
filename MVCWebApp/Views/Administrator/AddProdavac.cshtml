@@ -1,0 +1,74 @@
+﻿
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <form class="form-horizontal" method="post" action="/Administrator/AddProdavac">
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Register Prodavac</legend>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="fname">First Name</label>
+                <div class="col-md-4">
+                    <input id="Ime" name="Ime" type="text" placeholder="Tamara" class="form-control input-md" required="">
+
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="lname">Last Name</label>
+                <div class="col-md-4">
+                    <input id="Prezime" name="Prezime" type="text" placeholder="Trivunic" class="form-control input-md" required="">
+
+                </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="email">Username</label>
+                <div class="col-md-4">
+                    <input id="KorisnickoIme" name="KorisnickoIme" type="text" placeholder="tamara021" class="form-control input-md" required="">
+
+                </div>
+            </div>
+            <!-- Password input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="password">Password</label>
+                <div class="col-md-4">
+                    <input id="Lozinka" name="Lozinka" type="password" placeholder="" class="form-control input-md" required="">
+
+                </div>
+            </div>
+            <!-- Pol input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="pol">Pol</label>
+                <div>
+                    <input type="radio" name="Pol" id="Pol" value="ZENSKO" required=""><font color="black">ZENSKO</font>
+                    <input type="radio" name="Pol" id="Pol" value="MUSKO" required=""><font color="black">MUSKO</font>
+                </div>
+            </div>
+
+            <!-- Birthday input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="DatumRodjenja">Birthday</label>
+                <input type="date" id="DatumRodjenja" name="DatumRodjenja">
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"></label>
+                <div class="col-md-8">
+                    <button type="submit" id="Add" name="Add" class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+    <a href="javascript:history.back()">HOME PAGE</a>
+
+</body>
+</html>
+
