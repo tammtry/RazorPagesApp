@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfManifestacija xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Manifestacija>
+    <Naziv>JONY Europe Tour 2020</Naziv>
+    <TipManifestacije>KONCERT</TipManifestacije>
+    <BrojMesta>20000</BrojMesta>
+    <DatumIVremeOdrzavanja>21.12.2020.</DatumIVremeOdrzavanja>
+    <CenaRegularKarte>20</CenaRegularKarte>
+    <Status>AKTIVNO</Status>
+    <MestoOdrzavanja>
+      <Ulica>Pasiceva</Ulica>
+      <Broj>21</Broj>
+      <Mesto>Beograd</Mesto>
+      <PostanskiBroj>22000</PostanskiBroj>
+    </MestoOdrzavanja>
+    <PosterManifestacije>jony.jpeg</PosterManifestacije>
+  </Manifestacija>
+</ArrayOfManifestacija>

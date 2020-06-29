@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MVCWebApp.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -11,6 +12,16 @@ namespace MVCWebApp.Controllers
         // GET: Client
         public ActionResult Index()
         {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.AllManifHomePage();
+
             return View();
         }
     }

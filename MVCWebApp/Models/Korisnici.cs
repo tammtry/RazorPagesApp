@@ -20,6 +20,9 @@ namespace MVCWebApp.Models
         public ProdavacXML prodavacXML = new ProdavacXML();
         public List<Prodavac> listaProdavaca { get; set; }
 
+        public ManifestacijaXML manifestacijaXML = new ManifestacijaXML();
+        public List<Manifestacija> listaManifestacija { get; set; }
+
         public Korisnici()
         {
             listaKupaca = new List<Kupac>();
@@ -33,6 +36,9 @@ namespace MVCWebApp.Models
 
             listaProdavaca = new List<Prodavac>();
             listaProdavaca = prodavacXML.XmlDeserialize();
+
+            listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
         }
 
         // ---> [KUPAC] METODE <--- //
@@ -435,5 +441,16 @@ namespace MVCWebApp.Models
             }
 
         }
+
+        // ---> [MANIFESTACIJE] METODE <--- //
+
+        public List<Manifestacija> AllManifHomePage()
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            return listaManifestacija;
+        }
+
     }
 }

@@ -16,7 +16,48 @@
             <input class="btn btn-danger" type="submit" value="Login" name="Login">
         </form>
 
-    </div>   
+    </div>
+
+    @if (ViewBag.listaManifestacija != null)
+    {
+        <table style="margin-top: 30px;" class="table table-dark">
+
+            <thead style="background-color: lightcoral;">
+
+                <tr>
+                    <th scope="col">Name</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Capacity</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Ticket price [EUR]</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Place</th>
+                    <th scope="col">Poster</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.listaManifestacija)
+                {
+                    <tr>
+                        <td>@item.Naziv</td>
+                        <td>@item.TipManifestacije</td>
+                        <td>@item.BrojMesta</td>
+                        <td>@item.DatumIVremeOdrzavanja</td>
+                        <td>@item.CenaRegularKarte</td>
+                        <td>@item.Status</td>
+                        <td>@item.MestoOdrzavanja.Ulica @item.MestoOdrzavanja.Broj, @item.MestoOdrzavanja.Mesto, @item.MestoOdrzavanja.PostanskiBroj</td>
+                        <td><img src="~/Images/@item.PosterManifestacije" alt="Nema slike" width="200" height="100" /></td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+    }
+
 </body>
 
 </html>
