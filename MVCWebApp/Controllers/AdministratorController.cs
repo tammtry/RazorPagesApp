@@ -93,9 +93,7 @@ namespace MVCWebApp.Controllers
             }
 
             ViewBag.listaKorisnika = korisnici.SearchUsersByName(name);
-            //ViewBag.listaDomacina = korisnici.FilterDomacinPoImenu(pretraga);
-            //ViewBag.listaKomentara = korisnici.CitajSveKomentare("");
-            //ViewBag.listaRezervacija = korisnici.IscitajListuRezervacija("");
+
             return View("SearchBySomething");
         }
 
@@ -111,9 +109,23 @@ namespace MVCWebApp.Controllers
             }
 
             ViewBag.listaKorisnika = korisnici.SearchUsersBySurname(surname);
-            //ViewBag.listaDomacina = korisnici.FilterDomacinPoImenu(pretraga);
-            //ViewBag.listaKomentara = korisnici.CitajSveKomentare("");
-            //ViewBag.listaRezervacija = korisnici.IscitajListuRezervacija("");
+
+            return View("SearchBySomething");
+        }
+
+        [HttpPost]
+        public ActionResult SearchUsersByUsername(string username)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKorisnika = korisnici.SearchUsersByUsername(username);
+
             return View("SearchBySomething");
         }
     }

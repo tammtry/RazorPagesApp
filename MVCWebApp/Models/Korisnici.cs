@@ -317,6 +317,40 @@ namespace MVCWebApp.Models
 
         }
 
+        public Tuple<List<Kupac>, List<Prodavac>> SearchUsersByUsername(string username)
+        {
+            List<Kupac> listaKupaca = IscitajListuKupaca();
+            List<Prodavac> listaProdavaca = IscitajListuProdavaca();
+
+            Tuple<List<Kupac>, List<Prodavac>> retUsers = new Tuple<List<Kupac>, List<Prodavac>>(listaKupaca, listaProdavaca);
+
+            List<Kupac> retListaKupaca = new List<Kupac>();
+            List<Prodavac> retListaProdavaca = new List<Prodavac>();
+
+            List<Kupac> retKupac = new List<Kupac>();
+            List<Prodavac> retProdavac = new List<Prodavac>();
+
+            foreach (var item in retUsers.Item1)
+            {
+                if (item.KorisnickoIme.ToLower().Equals(username.ToLower()))
+                {
+                    retListaKupaca.Add(item);
+                }
+            }
+
+            foreach (var item2 in retUsers.Item2)
+            {
+                if (item2.KorisnickoIme.ToLower().Equals(username.ToLower()))
+                {
+                    retListaProdavaca.Add(item2);
+                }
+            }
+
+            Tuple<List<Kupac>, List<Prodavac>> retCurrent = new Tuple<List<Kupac>, List<Prodavac>>(retListaKupaca, retListaProdavaca);
+
+            return retCurrent;
+
+        }
 
         // ---> [PRODAVAC] METODE <--- //
 

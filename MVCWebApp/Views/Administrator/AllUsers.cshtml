@@ -59,14 +59,21 @@
         <div style="color:black">Search by first name:</div>
         <input type="text" name="name" />
         <br />
-        <input type="submit" value="Search" />
+        <input class="btn btn-danger" type="submit" value="Search" />
     </form>
 
     <form style="right:auto" method="post" action="/Administrator/SearchUsersBySurname">
         <div style="color:black">Search by surname:</div>
         <input type="text" name="surname" />
         <br />
-        <input type="submit" value="Search" />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+
+    <form style="right:auto" method="post" action="/Administrator/SearchUsersByUsername">
+        <div style="color:black">Search by username:</div>
+        <input type="text" name="username" />
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
     </form>
 
 </body>
