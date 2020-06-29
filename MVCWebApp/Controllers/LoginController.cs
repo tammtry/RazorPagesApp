@@ -40,6 +40,13 @@ namespace MVCWebApp.Controllers
                 return View("KupacLogin");
             }
 
+            else if(korisnici.SearchForProdavac(k.KorisnickoIme, k.Lozinka))
+            {
+                ViewBag.korisnicko_ime = korisnici.AddProdavac(k);
+
+                return View("ProdavacLogin");
+            }
+
             else
             {
                 return View("Error");

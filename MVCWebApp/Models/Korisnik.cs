@@ -32,5 +32,7 @@ namespace MVCWebApp.Models
         public List<Manifestacija> Manifestacije { get => manifestacije; set => manifestacije = value; }
         public double BrojBodova { get => brojBodova; set => brojBodova = value; }
         public TipKorisnika TipKorisnika { get => tipKorisnika; set => tipKorisnika = value; }
+
+        public Korisnik() { }
     }
 }

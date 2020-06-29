@@ -1,0 +1,46 @@
+﻿<h3>Personal info</h3>
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form class="form-horizontal" role="form" action="/Prodavac/SaveProdavacInfo" method="post">
+        <div class="form-group">
+            <label class="col-lg-3 control-label">First name: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="Ime" value="@ViewBag.ProdavacPodaci.Ime">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Last name: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="Prezime" value="@ViewBag.ProdavacPodaci.Prezime">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Username: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="KorisnickoIme" value="@ViewBag.ProdavacPodaci.KorisnickoIme">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Password: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="Lozinka" value="@ViewBag.ProdavacPodaci.Lozinka">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label"></label>
+            <div class="col-lg-8">
+                <input type="hidden" value=@ViewBag.ProdavacPodaci.KorisnickoIme name="KorisnickoIme" />
+                <input class="btn btn-danger" type="submit" value="Save" name="Save">
+            </div>
+        </div>
+    </form>
+    <a href="javascript:history.back()">Back</a>
+</body>
+
+</html>

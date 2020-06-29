@@ -26,7 +26,7 @@ namespace MVCWebApp.Controllers
                 Session["korisnici"] = korisnici;
             }
             ViewBag.korisnicko_ime = korisnici.AddAdmin(administrator);
-            ViewBag.AdminPodaci = korisnici.IscitajKupca(ViewBag.korisnicko_ime);
+            ViewBag.AdminPodaci = korisnici.IscitajAdministratora(ViewBag.korisnicko_ime);
 
             return View();
         }
@@ -62,6 +62,59 @@ namespace MVCWebApp.Controllers
             korisnici.AddProdavac(prodavac);
 
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult AllUsers()
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            //ViewBag.listaKupaca = korisnici.IscitajListuKupaca();
+            // ViewBag.listaProdavaca = korisnici.IscitajListuProdavaca();
+            ViewBag.listaKorisnika = korisnici.IscitajListuKorisnika();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SearchUsersByName(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKorisnika = korisnici.SearchUsersByName(name);
+            //ViewBag.listaDomacina = korisnici.FilterDomacinPoImenu(pretraga);
+            //ViewBag.listaKomentara = korisnici.CitajSveKomentare("");
+            //ViewBag.listaRezervacija = korisnici.IscitajListuRezervacija("");
+            return View("SearchBySomething");
+        }
+
+        [HttpPost]
+        public ActionResult SearchUsersBySurname(string surname)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKorisnika = korisnici.SearchUsersBySurname(surname);
+            //ViewBag.listaDomacina = korisnici.FilterDomacinPoImenu(pretraga);
+            //ViewBag.listaKomentara = korisnici.CitajSveKomentare("");
+            //ViewBag.listaRezervacija = korisnici.IscitajListuRezervacija("");
+            return View("SearchBySomething");
         }
     }
 }

@@ -1,0 +1,76 @@
+﻿<html>
+
+<head>
+
+</head>
+
+<body>
+
+    @if (ViewBag.listaKorisnika.Item1 != null && ViewBag.listaKorisnika.Item2 != null)
+    {
+        <table style="margin-top: 30px;" class="table table-dark">
+
+            <thead style="background-color: lightcoral">
+
+                <tr>
+                    <th scope="col">Username</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Surname</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Role</th>
+                    <th scope="col">Birthday</th>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.listaKorisnika.Item1)
+                {
+                    <tr>
+                        <td>@item.KorisnickoIme</td>
+                        <td>@item.Ime</td>
+                        <td>@item.Prezime</td>
+                        <td>@item.Pol</td>
+                        <td>@item.Uloga</td>
+                        <td>@item.DatumRodjenja</td>
+
+                    </tr>
+                }
+                @foreach (var item in ViewBag.listaKorisnika.Item2)
+                {
+                    <tr>
+                        <td>@item.KorisnickoIme</td>
+                        <td>@item.Ime</td>
+                        <td>@item.Prezime</td>
+                        <td>@item.Pol</td>
+                        <td>@item.Uloga</td>
+                        <td>@item.DatumRodjenja</td>
+
+                    </tr>
+                }
+
+            </tbody>
+
+        </table>
+
+
+    }
+
+    <form method="post" action="/Administrator/SearchUsersByName">
+        <div style="color:black">Search by first name:</div>
+        <input type="text" name="name" />
+        <br />
+        <input type="submit" value="Search" />
+    </form>
+
+    <form style="right:auto" method="post" action="/Administrator/SearchUsersBySurname">
+        <div style="color:black">Search by surname:</div>
+        <input type="text" name="surname" />
+        <br />
+        <input type="submit" value="Search" />
+    </form>
+
+</body>
+
+</html>
+
+

@@ -215,13 +215,114 @@ namespace MVCWebApp.Models
 
         }
 
+        public List<Kupac> IscitajListuKupaca()
+        {
+            List<Kupac> listaKupaca = new List<Kupac>();
+            listaKupaca = kupacXML.XmlDeserialize();
+
+            return listaKupaca;
+        }
+
+        public List<Prodavac> IscitajListuProdavaca()
+        {
+            List<Prodavac> listaProdavaca = new List<Prodavac>();
+            listaProdavaca = prodavacXML.XmlDeserialize();
+
+            return listaProdavaca;
+        }
+
+        public Tuple<List<Kupac>, List<Prodavac>> IscitajListuKorisnika()
+        {
+            List<Kupac> listaKupaca = new List<Kupac>();
+            listaKupaca = IscitajListuKupaca();
+
+            List<Prodavac> listaProdavaca = new List<Prodavac>();
+            listaProdavaca = IscitajListuProdavaca();
+
+            Tuple<List<Kupac>, List<Prodavac>> retKorisnici = new Tuple<List<Kupac>, List<Prodavac>>(listaKupaca, listaProdavaca);
+            return retKorisnici;
+        }
+
+        //------------------ [ADMINISTRATOR] sortiranje, filtriranje i pretraga ------------------ //
+
+        
+
+        public Tuple<List<Kupac>, List<Prodavac>> SearchUsersByName(string name)
+        {
+            List<Kupac> listaKupaca = IscitajListuKupaca();
+            List<Prodavac> listaProdavaca = IscitajListuProdavaca();
+
+            Tuple<List<Kupac>, List<Prodavac>> retUsers = new Tuple<List<Kupac>, List<Prodavac>>(listaKupaca, listaProdavaca);
+
+            List<Kupac> retListaKupaca = new List<Kupac>();
+            List<Prodavac> retListaProdavaca = new List<Prodavac>(); 
+
+            List<Kupac> retKupac = new List<Kupac>();
+            List<Prodavac> retProdavac = new List<Prodavac>();
+
+            foreach (var item in retUsers.Item1)
+            {
+                if(item.Ime.ToLower().Equals(name.ToLower()))
+                {
+                    retListaKupaca.Add(item);
+                }
+            }
+
+            foreach (var item2 in retUsers.Item2)
+            {
+                if (item2.Ime.ToLower().Equals(name.ToLower()))
+                {
+                    retListaProdavaca.Add(item2);
+                }
+            }
+
+            Tuple<List<Kupac>, List<Prodavac>> retCurrent = new Tuple<List<Kupac>, List<Prodavac>>(retListaKupaca, retListaProdavaca);
+
+            return retCurrent;
+            
+        }
+
+        public Tuple<List<Kupac>, List<Prodavac>> SearchUsersBySurname(string surname)
+        {
+            List<Kupac> listaKupaca = IscitajListuKupaca();
+            List<Prodavac> listaProdavaca = IscitajListuProdavaca();
+
+            Tuple<List<Kupac>, List<Prodavac>> retUsers = new Tuple<List<Kupac>, List<Prodavac>>(listaKupaca, listaProdavaca);
+
+            List<Kupac> retListaKupaca = new List<Kupac>();
+            List<Prodavac> retListaProdavaca = new List<Prodavac>();
+
+            List<Kupac> retKupac = new List<Kupac>();
+            List<Prodavac> retProdavac = new List<Prodavac>();
+
+            foreach (var item in retUsers.Item1)
+            {
+                if (item.Prezime.ToLower().Equals(surname.ToLower()))
+                {
+                    retListaKupaca.Add(item);
+                }
+            }
+
+            foreach (var item2 in retUsers.Item2)
+            {
+                if (item2.Prezime.ToLower().Equals(surname.ToLower()))
+                {
+                    retListaProdavaca.Add(item2);
+                }
+            }
+
+            Tuple<List<Kupac>, List<Prodavac>> retCurrent = new Tuple<List<Kupac>, List<Prodavac>>(retListaKupaca, retListaProdavaca);
+
+            return retCurrent;
+
+        }
+
+
         // ---> [PRODAVAC] METODE <--- //
 
         public void DodajProdavcaUFajl(Prodavac prodavac)
         {
-            //listaDomacina = new List<Domacin>();
-            //listaDomacina = domacinXML.XmlDeserialize();
-
+           
             listaProdavaca.Add(prodavac);
             prodavacXML.XmlSerialize(listaProdavaca);
 
@@ -252,6 +353,52 @@ namespace MVCWebApp.Models
                 }
             }
             return false;
+
+        }
+
+        public Prodavac IscitajProdavca(string KorisnickoIme)
+        {
+            listaProdavaca = new List<Prodavac>();
+            listaProdavaca = prodavacXML.XmlDeserialize();
+
+            Prodavac retProdavac = new Prodavac();
+            List<Prodavac> retVal = new List<Prodavac>();
+
+            foreach (var item in listaProdavaca)
+            {
+                if (item.KorisnickoIme == KorisnickoIme)
+                {
+                    retProdavac.KorisnickoIme = item.KorisnickoIme;
+                    retProdavac.Lozinka = item.Lozinka;
+                    retProdavac.Ime = item.Ime;
+                    retProdavac.Prezime = item.Prezime;
+
+                    //retVal.Add(retAdmin);
+                }
+            }
+            return retProdavac;
+        }
+
+        public void IzmeniProdavca(Prodavac p, Prodavac stariProdavac)
+        {
+            listaProdavaca = new List<Prodavac>();
+            listaProdavaca = prodavacXML.XmlDeserialize();
+
+            foreach (var item in listaProdavaca)
+            {
+                if (item.KorisnickoIme.Contains(stariProdavac.KorisnickoIme))
+                {
+                    item.KorisnickoIme = p.KorisnickoIme;
+                    item.Lozinka = p.Lozinka;
+                    item.Ime = p.Ime;
+                    item.Prezime = p.Prezime;
+                    item.Pol = p.Pol;
+                    item.Uloga = p.Uloga;
+
+
+                    prodavacXML.XmlSerialize(listaProdavaca);
+                }
+            }
 
         }
     }

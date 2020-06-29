@@ -1,4 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ArrayOfProdavac xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
- 
+  <Prodavac>
+    <KorisnickoIme>ana2</KorisnickoIme>
+    <Lozinka>2</Lozinka>
+    <Ime>Ana</Ime>
+    <Prezime>Pavlovic</Prezime>
+    <DatumRodjenja />
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <SveKarteBezObziraNaStatus />
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
+  <Prodavac>
+    <KorisnickoIme>ana2</KorisnickoIme>
+    <Lozinka>2</Lozinka>
+    <Ime>Ana</Ime>
+    <Prezime>Pavlovic</Prezime>
+    <DatumRodjenja>2020-06-03</DatumRodjenja>
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <SveKarteBezObziraNaStatus />
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
+  <Prodavac>
+    <KorisnickoIme />
+    <Lozinka />
+    <Ime />
+    <Prezime />
+    <DatumRodjenja />
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <SveKarteBezObziraNaStatus />
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
+  <Prodavac>
+    <KorisnickoIme>mare</KorisnickoIme>
+    <Lozinka>4</Lozinka>
+    <Ime>Marko</Ime>
+    <Prezime>Mitrovic</Prezime>
+    <DatumRodjenja>2020-06-01</DatumRodjenja>
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
 </ArrayOfProdavac>
