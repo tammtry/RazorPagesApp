@@ -33,22 +33,29 @@ namespace MVCWebApp.Models
         private string drzava;
         public string Drzava { get => drzava; set => drzava = value; }
 
-        /*public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster, string drz)
+        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, string poster, string drz)
         {
             Naziv = naz;
             TipManifestacije = tipM;
             BrojMesta = brMesta;
-            DatumIVremeOdrzavanja = DateTime.Parse("02:00:00 PM");
+            DatumIVremeOdrzavanja = datumVr;
             Status = s;
-            MestoOdrzavanja = mo;
+            //MestoOdrzavanja = mo;
             PosterManifestacije = poster;
             Drzava = drz;
             
-        }*/
+        }
 
         public Manifestacija()
         {
-       
+            Naziv = "";
+            TipManifestacije = TipManifestacije.FESTIVAL;
+            BrojMesta = 11;
+            DatumIVremeOdrzavanja = DateTime.Now;
+            CenaRegularKarte = 111;
+            Status = Status.NEAKTIVNO;
+            PosterManifestacije = "";
+            Drzava = "";
         }
     }
 }

@@ -55,13 +55,13 @@
     <DatumIVremeOdrzavanja>2021-06-01T00:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>44</CenaRegularKarte>
     <Status>AKTIVNO</Status>
+    <PosterManifestacije>jony.jpeg</PosterManifestacije>
     <MestoOdrzavanja>
       <Ulica>Xy</Ulica>
       <Broj>5</Broj>
       <Mesto>Novi Sad</Mesto>
       <PostanskiBroj>21000</PostanskiBroj>
     </MestoOdrzavanja>
-    <PosterManifestacije>jony.jpeg</PosterManifestacije>
     <Drzava>Finland</Drzava>
   </Manifestacija>
 </ArrayOfManifestacija>

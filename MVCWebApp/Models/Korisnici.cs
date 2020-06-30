@@ -514,41 +514,17 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
-        public string AddManifestation(Manifestacija manif)
-        {
-            if (SearchForManifestation(manif.Naziv))
-            {
-                if (!listaManifestacija.Contains(manif))
-                {
-                    this.listaManifestacija.Add(manif);
-                }
-            }
-            return manif.Naziv;
-        }
-
-        public bool SearchForManifestation(string nazivManifestacije)
-        {
-            listaManifestacija = new List<Manifestacija>();
-            listaManifestacija = manifestacijaXML.XmlDeserialize();
-
-            foreach (var item in listaManifestacija)
-            {
-                if (item.Naziv.ToLower().Equals(nazivManifestacije.ToLower()))
-                {
-                    return true;
-                }
-            }
-            return false;
-
-        }
 
         public void DodajManifestacijuUFajl(Manifestacija manif)
         {
 
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
             listaManifestacija.Add(manif);
             manifestacijaXML.XmlSerialize(listaManifestacija);
-
         }
 
+       
     }
 }

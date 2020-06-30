@@ -6,7 +6,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <form class="form-horizontal" method="post" action="/Prodavac/AddManifestation">
+    <form class="form-horizontal" method="post" action="/Prodavac/Add">
         <fieldset>
             <!-- Form Name -->
             <legend>Add manifestation</legend>
@@ -39,7 +39,7 @@
             <!-- Date input-->
             <div class="form-group">
                 <label class="col-md-4 control-label" for="date">Date</label>
-                <input type="date" id="DatumIVremeOdrzavanja" name="DatumIVremeOdrzavanja">
+                <input type="date" id="DatumIVremeOdrzavanja" name="DatumIVremeOdrzavanja" required="">
             </div>
 
             <!-- Price input-->
@@ -74,7 +74,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="poster"></label>
                 <div class="col-md-8">
-                    <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required />
+                    <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required=" />
                 </div>
             </div>
 
@@ -82,7 +82,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="save"></label>
                 <div class="col-md-8">
-                    <button type="submit" id="Add" name="Add" class="btn btn-success">Add</button>
+                    <input type="submit" value="Add" id="Add" name="Add" class="btn btn-success">
                 </div>
             </div>
         </fieldset>

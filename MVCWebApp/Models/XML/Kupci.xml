@@ -26,6 +26,23 @@
     <Pol>MUSKO</Pol>
     <Uloga>KUPAC</Uloga>
     <SveKarteBezObziraNaStatus />
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Kupac>
+  <Kupac>
+    <KorisnickoIme>deki</KorisnickoIme>
+    <Lozinka>1</Lozinka>
+    <Ime>Dejan</Ime>
+    <Prezime>Dejic</Prezime>
+    <DatumRodjenja>2020-06-21</DatumRodjenja>
+    <Pol>MUSKO</Pol>
+    <Uloga>KUPAC</Uloga>
+    <SveKarteBezObziraNaStatus />
     <BrojBodova>0</BrojBodova>
     <TipKorisnika>
       <ImeTipa>ZLATNI</ImeTipa>

@@ -260,6 +260,7 @@
     <Content Include="Views\Administrator\AllUsers.cshtml" />
     <Content Include="Views\Administrator\SearchBySomething.cshtml" />
     <Content Include="Views\Prodavac\AddManifestation.cshtml" />
+    <Content Include="Views\Prodavac\Added.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

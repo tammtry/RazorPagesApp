@@ -59,10 +59,32 @@ namespace MVCWebApp.Controllers
                 Session["korisnici"] = korisnici;
             }
 
-            korisnici.DodajManifestacijuUFajl(manifestacija);
-            //korisnici.AddManifestation(manifestacija);
 
             return View();
         }
+
+
+        [HttpPost]
+        public ActionResult Add(Manifestacija manifestacija)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            korisnici.DodajManifestacijuUFajl(manifestacija);
+                //korisnici.AddManifestation(manifestacija);
+
+             return View("Added");
+           }
+
+        }
+
+    
     }
-}
+           
+
+   
