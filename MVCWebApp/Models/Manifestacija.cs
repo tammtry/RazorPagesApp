@@ -27,9 +27,13 @@ namespace MVCWebApp.Models
         public Status Status { get => status; set => status = value; }      
         public string PosterManifestacije { get => posterManifestacije; set => posterManifestacije = value; }
         public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
+     
 
+        //dodatno polje
+        private string drzava;
+        public string Drzava { get => drzava; set => drzava = value; }
 
-        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster)
+        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster, string drz)
         {
             Naziv = naz;
             TipManifestacije = tipM;
@@ -38,6 +42,7 @@ namespace MVCWebApp.Models
             Status = s;
             MestoOdrzavanja = mo;
             PosterManifestacije = poster;
+            Drzava = drz;
             
         }
 

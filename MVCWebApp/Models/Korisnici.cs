@@ -454,6 +454,45 @@ namespace MVCWebApp.Models
             return list;
         }
 
-      
+        public List<Manifestacija> SearchManifByName(string name)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach(var item in listaManifestacija)
+            {
+                if(item.Naziv.ToLower().Equals(name.ToLower()))
+                {
+                    retManif.Add(item);
+                    var list = retManif.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
+                    retManif = list;
+                }
+            }
+
+            return retManif;
+        }
+
+        public List<Manifestacija> SearchByManifCountry(string name)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Drzava.ToLower().Equals(name.ToLower()))
+                {
+                    retManif.Add(item);
+                    var list = retManif.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
+                    retManif = list;
+                }
+            }
+
+            return retManif;
+        }
+        
     }
 }
