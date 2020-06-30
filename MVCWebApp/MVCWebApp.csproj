@@ -184,6 +184,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Images\arthur.jpg" />
+    <Content Include="Images\emeli.jpg" />
     <Content Include="Images\jony.jpeg" />
     <Content Include="Models\XML\Administratori.xml" />
     <Content Include="Models\XML\Korisnici.xml" />

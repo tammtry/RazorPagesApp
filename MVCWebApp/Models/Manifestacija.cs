@@ -1,6 +1,8 @@
 ﻿using MVCWebApp.Models.Enums;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -11,7 +13,7 @@ namespace MVCWebApp.Models
         private string naziv;
         private TipManifestacije tipManifestacije;
         private int brojMesta;
-        private string datumIVremeOdrzavanja;
+        private DateTime datumIVremeOdrzavanja;
         private double cenaRegularKarte;
         private Status status;
         private MestoOdrzavanja mestoOdrzavanja;
@@ -20,21 +22,23 @@ namespace MVCWebApp.Models
         public string Naziv { get => naziv; set => naziv = value; }
         public TipManifestacije TipManifestacije { get => tipManifestacije; set => tipManifestacije = value; }
         public int BrojMesta { get => brojMesta; set => brojMesta = value; }
-        public string DatumIVremeOdrzavanja { get => datumIVremeOdrzavanja; set => datumIVremeOdrzavanja = value; }
+        public DateTime DatumIVremeOdrzavanja { get => datumIVremeOdrzavanja; set => datumIVremeOdrzavanja = value; }
         public double CenaRegularKarte { get => cenaRegularKarte; set => cenaRegularKarte = value; }
-        public Status Status { get => status; set => status = value; }
-        public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
+        public Status Status { get => status; set => status = value; }      
         public string PosterManifestacije { get => posterManifestacije; set => posterManifestacije = value; }
+        public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
 
-        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, string datumVr, Status s, MestoOdrzavanja mo, string poster)
+
+        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster)
         {
             Naziv = naz;
             TipManifestacije = tipM;
             BrojMesta = brMesta;
-            DatumIVremeOdrzavanja = datumVr;
+            DatumIVremeOdrzavanja = DateTime.Parse("02:00:00 PM");
             Status = s;
             MestoOdrzavanja = mo;
             PosterManifestacije = poster;
+            
         }
 
         private Manifestacija()

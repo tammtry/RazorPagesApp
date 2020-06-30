@@ -1,5 +1,5 @@
 ﻿<html>
-
+<%= Html.TextBoxFor(model => model.DatumIvremeOdrzavanja.ToString("dd/MM/yyyy"), new { style = "width: 120px" }) %>
 <head>
 
 </head>
@@ -43,7 +43,7 @@
                     <tr>
                         <td>@item.Naziv</td>
                         <td>@item.TipManifestacije</td>
-                        <td>@item.BrojMesta</td>
+                        <td>@item.BrojMesta</td>                     
                         <td>@item.DatumIVremeOdrzavanja</td>
                         <td>@item.CenaRegularKarte</td>
                         <td>@item.Status</td>

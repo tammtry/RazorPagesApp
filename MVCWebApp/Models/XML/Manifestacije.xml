@@ -4,7 +4,7 @@
     <Naziv>JONY Europe Tour 2020</Naziv>
     <TipManifestacije>KONCERT</TipManifestacije>
     <BrojMesta>20000</BrojMesta>
-    <DatumIVremeOdrzavanja>21.12.2020.</DatumIVremeOdrzavanja>
+    <DatumIVremeOdrzavanja>2020-07-25T10:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>20</CenaRegularKarte>
     <Status>AKTIVNO</Status>
     <MestoOdrzavanja>
@@ -14,5 +14,20 @@
       <PostanskiBroj>22000</PostanskiBroj>
     </MestoOdrzavanja>
     <PosterManifestacije>jony.jpeg</PosterManifestacije>
+  </Manifestacija>
+  <Manifestacija>
+    <Naziv>Arthur Exit Festival 2020</Naziv>
+    <TipManifestacije>FESTIVAL</TipManifestacije>
+    <BrojMesta>15000</BrojMesta>
+    <DatumIVremeOdrzavanja>2020-07-24T10:00:00</DatumIVremeOdrzavanja>
+    <CenaRegularKarte>55</CenaRegularKarte>
+    <Status>NEAKTIVNO</Status>
+    <MestoOdrzavanja>
+      <Ulica>Xy</Ulica>
+      <Broj>5</Broj>
+      <Mesto>Novi Sad</Mesto>
+      <PostanskiBroj>21000</PostanskiBroj>
+    </MestoOdrzavanja>
+    <PosterManifestacije>arthur.jpg</PosterManifestacije>
   </Manifestacija>
 </ArrayOfManifestacija>

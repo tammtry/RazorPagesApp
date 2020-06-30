@@ -10,7 +10,7 @@ namespace MVCWebApp.Models
     {
         private string idKarte;
         private Manifestacija manifestacijaZaKojuJeRezervisana;
-        private string datumIVremeManifestacije;
+        private DateTime datumIVremeManifestacije;
         private string cenaKarte;
         private string kupac;
         private StatusKarte statusKarte;
@@ -18,13 +18,13 @@ namespace MVCWebApp.Models
 
         public string IdKarte { get => idKarte; set => idKarte = value; }
         public Manifestacija ManifestacijaZaKojuJeRezervisana { get => manifestacijaZaKojuJeRezervisana; set => manifestacijaZaKojuJeRezervisana = value; }
-        public string DatumIVremeManifestacije { get => datumIVremeManifestacije; set => datumIVremeManifestacije = value; }
+        public DateTime DatumIVremeManifestacije { get => datumIVremeManifestacije; set => datumIVremeManifestacije = value; }
         public string CenaKarte { get => cenaKarte; set => cenaKarte = value; }
         public string Kupac { get => kupac; set => kupac = value; }
         public StatusKarte StatusKarte { get => statusKarte; set => statusKarte = value; }
         public TipKarte TipKarte { get => tipKarte; set => tipKarte = value; }
 
-        public Karta(string id, Manifestacija manif, string datum, string cena, string kup, StatusKarte statusK, TipKarte tipK)
+        public Karta(string id, Manifestacija manif, DateTime datum, string cena, string kup, StatusKarte statusK, TipKarte tipK)
         {
             IdKarte = id;
             ManifestacijaZaKojuJeRezervisana = manif;
@@ -38,8 +38,8 @@ namespace MVCWebApp.Models
         private Karta()
         {
             IdKarte = "";
-            ManifestacijaZaKojuJeRezervisana = new Manifestacija("", TipManifestacije.FESTIVAL, 0, "", Status.NEAKTIVNO, null, "");
-            DatumIVremeManifestacije = "21.12.1997.";
+            ManifestacijaZaKojuJeRezervisana = new Manifestacija("", TipManifestacije.FESTIVAL, 0, DateTime.Parse("MM/dd/yyyy hh:mm tt"), Status.NEAKTIVNO, null, "");
+            DatumIVremeManifestacije = DateTime.Parse("MM/dd/yyyy hh:mm tt");
             CenaKarte = "244,00 dinara";
             Kupac = "Tamara";
             StatusKarte = StatusKarte.REZERVISANA;

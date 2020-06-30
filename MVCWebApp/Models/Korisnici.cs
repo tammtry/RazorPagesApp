@@ -449,8 +449,11 @@ namespace MVCWebApp.Models
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
             listaManifestacija = manifestacijaXML.XmlDeserialize();
 
-            return listaManifestacija;
+            var list = listaManifestacija.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
+
+            return list;
         }
 
+      
     }
 }
