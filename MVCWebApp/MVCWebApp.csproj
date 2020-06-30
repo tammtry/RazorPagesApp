@@ -172,6 +172,7 @@
     <Compile Include="Models\TipKorisnika.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="XMLMethods\AdministratorXML.cs" />
+    <Compile Include="XMLMethods\KartaXML.cs" />
     <Compile Include="XMLMethods\KorisnikXML.cs" />
     <Compile Include="XMLMethods\KupacXML.cs" />
     <Compile Include="XMLMethods\ManifestacijaXML.cs" />
@@ -188,6 +189,7 @@
     <Content Include="Images\emeli.jpg" />
     <Content Include="Images\jony.jpeg" />
     <Content Include="Models\XML\Administratori.xml" />
+    <Content Include="Models\XML\Karte.xml" />
     <Content Include="Models\XML\Korisnici.xml" />
     <Content Include="Models\XML\Kupci.xml" />
     <Content Include="Models\XML\Manifestacije.xml" />
@@ -264,6 +266,7 @@
     <Content Include="Views\Prodavac\ChangeManifestation.cshtml" />
     <Content Include="Views\Prodavac\SaveManifestationInfo.cshtml" />
     <Content Include="Views\Prodavac\Deleted.cshtml" />
+    <Content Include="Views\Kupac\KupacTickets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

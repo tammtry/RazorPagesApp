@@ -31,6 +31,22 @@ namespace MVCWebApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult KupacTickets(string KorisnickoIme)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.IscitajListuKarata(KorisnickoIme);
+            
+            return View();
+        }
+
 
         [HttpPost]
         public ActionResult SaveKupacInfo(Kupac k, string KorisnickoIme)

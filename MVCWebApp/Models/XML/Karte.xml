@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfKarta xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Karta>
+    <IdKarte>21121997</IdKarte>
+    <ManifestacijaZaKojuJeRezervisana>
+      <Naziv>JONY Europe Tour 2020</Naziv>
+      <TipManifestacije>KONCERT</TipManifestacije>
+      <BrojMesta>2020</BrojMesta>
+      <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
+      <CenaRegularKarte>50EUR</CenaRegularKarte>
+      <Status>AKTIVNO</Status>
+      <MestoOdrzavanja>
+        <Ulica>Pasiceva</Ulica>
+        <Broj>21</Broj>
+        <Mesto>Beograd</Mesto>
+        <PostanskiBroj>22000</PostanskiBroj>
+      </MestoOdrzavanja>
+      <PosterManifestacije>jony.jpeg</PosterManifestacije>
+      <Drzava>Srbija</Drzava>
+      <Id>0</Id>
+    </ManifestacijaZaKojuJeRezervisana>
+    <DatumIVremeManifestacije>2020-07-25T19:00:00</DatumIVremeManifestacije>
+    <CenaKarte>30EUR</CenaKarte>
+    <Kupac>sanja27</Kupac>
+    <StatusKarte>REZERVISANA</StatusKarte>
+    <TipKarte>VIP</TipKarte>   
+  </Karta>
+  <Karta>
+    <IdKarte>16091984</IdKarte>
+    <ManifestacijaZaKojuJeRezervisana>
+      <Naziv>Emeli Sande</Naziv>
+      <TipManifestacije>PREDSTAVA</TipManifestacije>
+      <BrojMesta>2020</BrojMesta>
+      <DatumIVremeOdrzavanja>2020-06-30T21:00:00</DatumIVremeOdrzavanja>
+      <CenaRegularKarte>34EUR</CenaRegularKarte>
+      <Status>AKTIVNO</Status>
+      <MestoOdrzavanja>
+        <Ulica>Sheez</Ulica>
+        <Broj>1</Broj>
+        <Mesto>Brooklyn</Mesto>
+        <PostanskiBroj>2332</PostanskiBroj>
+      </MestoOdrzavanja>
+      <PosterManifestacije>emeli.jpg</PosterManifestacije>
+      <Drzava>Srbija</Drzava>
+      <Id>1</Id>
+    </ManifestacijaZaKojuJeRezervisana>
+    <DatumIVremeManifestacije>2020-06-30T21:00:00</DatumIVremeManifestacije>
+    <CenaKarte>34EUR</CenaKarte>
+    <Kupac>sanja27</Kupac>
+    <StatusKarte>ODUSTANAK</StatusKarte>
+    <TipKarte>FANPIT</TipKarte>
+  </Karta>
+</ArrayOfKarta>

@@ -1,0 +1,74 @@
+﻿<html>
+
+<head>
+
+</head>
+
+<body>
+
+    @if (ViewBag.listaKarata != null)
+    {
+        <table style="margin-top: 30px;" class="table table-dark">
+
+            <thead style="background-color: lightcoral">
+
+                <tr>
+                    <th scope="col">Ticket id</th>
+                    <th scope="col">Manifestation</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Buyer</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Type</th>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.listaKarata)
+                {
+                    <tr>
+                        <td>@item.IdKarte</td>
+                        <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
+                        <td>@item.DatumIVremeManifestacije</td>
+                        <td>@item.CenaKarte</td>
+                        <td>@item.Kupac</td>
+                        <td>@item.StatusKarte</td>
+                        <td>@item.TipKarte</td>
+
+                    </tr>
+                }
+         
+
+            </tbody>
+
+        </table>
+
+
+    }
+
+    <form method="post" action="/Administrator/SearchUsersByName">
+        <div style="color:black">Search by first name:</div>
+        <input type="text" name="name" />
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+
+    <form style="right:auto" method="post" action="/Administrator/SearchUsersBySurname">
+        <div style="color:black">Search by surname:</div>
+        <input type="text" name="surname" />
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+
+    <form style="right:auto" method="post" action="/Administrator/SearchUsersByUsername">
+        <div style="color:black">Search by username:</div>
+        <input type="text" name="username" />
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+
+</body>
+
+</html>
+
+

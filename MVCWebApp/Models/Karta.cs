@@ -38,8 +38,8 @@ namespace MVCWebApp.Models
         private Karta()
         {
             IdKarte = "";
-            //ManifestacijaZaKojuJeRezervisana = new Manifestacija("", TipManifestacije.FESTIVAL, 0, DateTime.Parse("MM/dd/yyyy hh:mm tt"), Status.NEAKTIVNO, null, "", "");
-            DatumIVremeManifestacije = DateTime.Parse("MM/dd/yyyy hh:mm tt");
+            ManifestacijaZaKojuJeRezervisana = null; 
+            DatumIVremeManifestacije = DateTime.Now;
             CenaKarte = "244,00 dinara";
             Kupac = "Tamara";
             StatusKarte = StatusKarte.REZERVISANA;

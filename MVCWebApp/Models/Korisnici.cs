@@ -23,6 +23,9 @@ namespace MVCWebApp.Models
         public ManifestacijaXML manifestacijaXML = new ManifestacijaXML();
         public List<Manifestacija> listaManifestacija { get; set; }
 
+        public KartaXML kartaXML = new KartaXML();
+        public List<Karta> listaKarata { get; set; }
+
         public Korisnici()
         {
             listaKupaca = new List<Kupac>();
@@ -39,6 +42,9 @@ namespace MVCWebApp.Models
 
             listaManifestacija = new List<Manifestacija>();
             listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
         }
 
         // ---> [KUPAC] METODE <--- //
@@ -679,7 +685,24 @@ namespace MVCWebApp.Models
                 }
             }
         }
-       
 
+        // ---> [KARTA] METODE <--- //
+
+        public List<Karta> IscitajListuKarata(string KorisnickoIme) //kod domacina
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retVal = new List<Karta>();
+            foreach (var item in listaKarata)
+            {
+                if (item.Kupac == KorisnickoIme)
+                {
+                    retVal.Add(item);
+                }
+            }
+
+            return retVal;
+        }
     }
 }
