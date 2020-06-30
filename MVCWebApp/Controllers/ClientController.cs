@@ -73,6 +73,37 @@ namespace MVCWebApp.Controllers
             return View("Index");
         }
 
-            
+        [HttpPost]
+        public ActionResult SortByManifName(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.SortByManifName(name);
+
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ActionResult SortByManifPrice(string price)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.SortByManifPrice(price);
+
+            return View("Index");
+        }
+        
     }
 }

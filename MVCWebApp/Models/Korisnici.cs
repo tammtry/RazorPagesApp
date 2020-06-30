@@ -514,6 +514,43 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
+        public IEnumerable<Manifestacija> SortByManifName(string name)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            IEnumerable<Manifestacija> nova = null;
+
+            if (name == "ASC")
+            {       
+              nova = listaManifestacija.OrderBy(x=>x.Naziv); //cena
+            }
+            else 
+            {
+                nova = listaManifestacija.OrderByDescending(x => x.Naziv); //cena
+            }
+            
+            return nova;
+        }
+
+        public IEnumerable<Manifestacija> SortByManifPrice(string price)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            IEnumerable<Manifestacija> nova = null;
+
+            if (price == "ASC")
+            {
+                nova = listaManifestacija.OrderBy(x => x.CenaRegularKarte).ToList(); //cena
+            }
+            else
+            {
+                nova = listaManifestacija.OrderByDescending(x => x.CenaRegularKarte).ToList(); //cena
+            }
+
+            return nova;
+        }
 
         public void DodajManifestacijuUFajl(Manifestacija manif)
         {

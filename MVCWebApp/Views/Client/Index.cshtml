@@ -81,6 +81,24 @@
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
 
+    <form method="post" action="/Client/SortByManifName">
+        <div style="color:black">Sort by manifestation name:</div>
+        <select name="name" id="name">
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Sort" />
+    </form>
+
+    <form method="post" action="/Client/SortByManifPrice">
+        <div style="color:black">Sort by manifestation ticket price:</div>
+        <select name="price" id="price">
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Sort" />
+    </form>
+
 </body>
 
 </html>
