@@ -3,10 +3,10 @@
   <Manifestacija>
     <Naziv>JONY Europe Tour 2020</Naziv>
     <TipManifestacije>KONCERT</TipManifestacije>
-    <BrojMesta>20000</BrojMesta>
+    <BrojMesta>12</BrojMesta>
     <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
-    <CenaRegularKarte>20</CenaRegularKarte>
-    <Status>AKTIVNO</Status>
+    <CenaRegularKarte>5</CenaRegularKarte>
+    <Status>NEAKTIVNO</Status>
     <PosterManifestacije>jony.jpeg</PosterManifestacije>
     <MestoOdrzavanja>
       <Ulica>Pasiceva</Ulica>
@@ -15,6 +15,7 @@
       <PostanskiBroj>22000</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
+    <Id>0</Id>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Arthur Exit Festival 2020</Naziv>
@@ -31,11 +32,12 @@
       <PostanskiBroj>21000</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
+    <Id>1</Id>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Emeli Sande</Naziv>
     <TipManifestacije>PREDSTAVA</TipManifestacije>
-    <BrojMesta>15000</BrojMesta>
+    <BrojMesta>333</BrojMesta>
     <DatumIVremeOdrzavanja>2020-06-30T21:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>34</CenaRegularKarte>
     <Status>AKTIVNO</Status>
@@ -47,21 +49,6 @@
       <PostanskiBroj>2332</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>USA</Drzava>
-  </Manifestacija>
-  <Manifestacija>
-    <Naziv>Predstava</Naziv>
-    <TipManifestacije>PREDSTAVA</TipManifestacije>
-    <BrojMesta>233</BrojMesta>
-    <DatumIVremeOdrzavanja>2021-06-01T00:00:00</DatumIVremeOdrzavanja>
-    <CenaRegularKarte>44</CenaRegularKarte>
-    <Status>AKTIVNO</Status>
-    <PosterManifestacije>jony.jpeg</PosterManifestacije>
-    <MestoOdrzavanja>
-      <Ulica>Xy</Ulica>
-      <Broj>5</Broj>
-      <Mesto>Novi Sad</Mesto>
-      <PostanskiBroj>21000</PostanskiBroj>
-    </MestoOdrzavanja>
-    <Drzava>Finland</Drzava>
+    <Id>2</Id>
   </Manifestacija>
 </ArrayOfManifestacija>

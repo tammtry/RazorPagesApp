@@ -1,0 +1,49 @@
+﻿
+   @foreach (var item in ViewBag.listaManifestacija)
+    {
+        <form method="post" action="/Prodavac/SaveManifestationInfo">
+            <table style="margin-top: 30px;" class="table table-dark" border="1">
+                <tr>
+                    <td>Name:</td>
+                    <td>
+                        <input type="text" value=" @item.Naziv" name="Naziv" />
+                    </td>
+                </tr>
+                <tr><td>Type:</td><td>  <input type="text" value=" @item.TipManifestacije" name="TipManifestacije" /></td></tr>
+                <tr><td>Capacity:</td><td> <input type="text" value="@item.BrojMesta" name="BrojMesta" /></td></tr>
+                <tr><td>Date:</td><td><input type="text" value="@item.DatumIVremeOdrzavanja" name="DatumIVremeOdrzavanja" /></td></tr>
+                <tr><td>Price:</td><td><input type="text" value="@item.CenaRegularKarte" name="CenaRegularKarte" /></td></tr>
+                <tr><td>Status:</td><td><input type="text" value="@item.Status" name="Status" /></td></tr>        
+                <tr>
+                    <td>Poster:</td>
+                    <td>
+                        <img src="~/Images/@item.PosterManifestacije" alt="Nema slike" width="100" height="100" />
+                        <input type="hidden" value="@item.PosterManifestacije" name="Slika" />
+                    </td>
+                </tr>       
+                <tr><td><input type="hidden" value="@item.Id" name="Id" /></td></tr>
+                <tr>
+                    <td colspan="2" style="text-align: center">
+                        <input type="hidden" value="@item.Id" name="Id" />
+                        <input class="btn btn-danger" type="submit" name="submit" value="Change" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+
+        <form action="/Prodavac/DeleteManifestation" method="post">
+            <table border="1">
+                <tr>
+                    <th colspan="2" style="text-align: center">
+                        <input type="hidden" value=@item.Id name="Id" />
+                        <input  class="btn btn-danger" type="submit" name="delete" value="Delete" />
+                    </th>
+                </tr>
+            </table>
+        </form>
+        <br />
+
+    }
+
+<a href="javascript:history.back()">Nazad</a>
+

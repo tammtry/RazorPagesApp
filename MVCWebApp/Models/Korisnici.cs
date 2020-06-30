@@ -562,6 +562,124 @@ namespace MVCWebApp.Models
             manifestacijaXML.XmlSerialize(listaManifestacija);
         }
 
+        public List<Manifestacija> IscitajListuManifestacija()
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            return listaManifestacija;
+        }
+
+
+        /*public Manifestacija IscitajManifestaciju(string Naziv)
+        {
+            listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            Manifestacija retManif = new Manifestacija();
+            List<Manifestacija> retVal = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Naziv == Naziv)
+                {
+                    retManif.Naziv = item.Naziv;
+                    retManif.TipManifestacije = item.TipManifestacije;
+                    retManif.BrojMesta = item.BrojMesta;
+                    retManif.DatumIVremeOdrzavanja = item.DatumIVremeOdrzavanja;
+                    retManif.CenaRegularKarte = item.CenaRegularKarte;
+                    retManif.Status = item.Status;
+                    retManif.PosterManifestacije = item.PosterManifestacije;
+
+                    //retVal.Add(retAdmin);
+                }
+            }
+            return retManif;
+        }*/
+
+        public Manifestacija IscitajStaruManifestaciju(string Id)
+        {
+            Manifestacija retVal = new Manifestacija();
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            foreach(var item in listaManifestacija)
+            {
+                if(item.Id == Int32.Parse(Id))
+                {
+                    retVal = item;
+                }
+            }
+            return retVal;
+        }
+
+        public void IzmeniManifestaciju(Manifestacija m, Manifestacija staraManifestacija)
+        {
+            listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Id.ToString() == staraManifestacija.Id.ToString())
+                {
+                    item.Naziv = m.Naziv;
+                    item.TipManifestacije = m.TipManifestacije;
+                    item.BrojMesta = m.BrojMesta;
+                    item.DatumIVremeOdrzavanja = m.DatumIVremeOdrzavanja;
+                    item.CenaRegularKarte = m.CenaRegularKarte;
+                    item.Status = m.Status;
+                    item.PosterManifestacije = m.PosterManifestacije;
+                    item.Id = m.Id;
+
+                    manifestacijaXML.XmlSerialize(listaManifestacija);
+                    manifestacijaXML.XmlDeserialize();
+                }
+            }
+
+        }
+
+        public string AddManifestacija(Manifestacija manif)
+        {
+            if(SearchForManifestacija(manif.Naziv))
+            {              
+                    this.listaManifestacija.Add(manif);          
+            }
+            return manif.Naziv;
+        }
+
+        public bool SearchForManifestacija(string Naziv)
+        {
+            listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Naziv == Naziv)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        public void DeleteManifestation(string Id)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retVal = new List<Manifestacija>();
+            retVal = listaManifestacija;
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Id.ToString() == Id.ToString())
+                {
+                    retVal.Remove(item);
+                    manifestacijaXML.XmlSerialize(retVal);
+                }
+            }
+        }
        
+
     }
 }

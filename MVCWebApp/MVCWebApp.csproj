@@ -255,12 +255,15 @@
     <Content Include="Views\Kupac\SaveKupacInfo.cshtml" />
     <Content Include="Views\Administrator\AddProdavac.cshtml" />
     <Content Include="Views\Prodavac\AboutProdavac.cshtml" />
-    <Content Include="Views\Prodavac\SaveProdavacInfo.cshtml" />
     <Content Include="Views\Login\ProdavacLogin.cshtml" />
     <Content Include="Views\Administrator\AllUsers.cshtml" />
     <Content Include="Views\Administrator\SearchBySomething.cshtml" />
     <Content Include="Views\Prodavac\AddManifestation.cshtml" />
     <Content Include="Views\Prodavac\Added.cshtml" />
+    <Content Include="Views\Prodavac\AllManifestations.cshtml" />
+    <Content Include="Views\Prodavac\ChangeManifestation.cshtml" />
+    <Content Include="Views\Prodavac\SaveManifestationInfo.cshtml" />
+    <Content Include="Views\Prodavac\Deleted.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

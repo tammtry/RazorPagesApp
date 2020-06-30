@@ -76,15 +76,78 @@ namespace MVCWebApp.Controllers
             }
 
             korisnici.DodajManifestacijuUFajl(manifestacija);
-                //korisnici.AddManifestation(manifestacija);
+            //korisnici.AddManifestation(manifestacija);
 
-             return View("Added");
-           }
-
+            return View("Added");
         }
 
-    
-    }
-           
+        [HttpPost]
+        public ActionResult AllManifestations()
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
 
-   
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.IscitajListuManifestacija();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult ChangeManifestation(Manifestacija manif) //INFO ABOUT THAT CURRENT MANIF // with changeable fields //ne radi
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+            ViewBag.thisOne = korisnici.AddManifestacija(manif); //umesto korisnicko_ime stavi naziv
+            //ViewBag.ManifestacijaPodaci = korisnici.IscitajManifestaciju(ViewBag.thisOne);
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveManifestationInfo(Manifestacija m, string Id) //radi
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+            //pozovi izmenu
+            Manifestacija staraManifestacija = new Manifestacija();           
+            staraManifestacija = korisnici.IscitajStaruManifestaciju(Id);
+            korisnici.IzmeniManifestaciju(m, staraManifestacija);
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult DeleteManifestation(string Id)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            korisnici.DeleteManifestation(Id);
+
+            return View("Deleted");
+        }
+
+    }
+
+}
+
+

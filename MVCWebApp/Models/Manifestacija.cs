@@ -18,6 +18,7 @@ namespace MVCWebApp.Models
         private Status status;
         private MestoOdrzavanja mestoOdrzavanja;
         private string posterManifestacije;
+        private int id;
 
         public string Naziv { get => naziv; set => naziv = value; }
         public TipManifestacije TipManifestacije { get => tipManifestacije; set => tipManifestacije = value; }
@@ -27,13 +28,15 @@ namespace MVCWebApp.Models
         public Status Status { get => status; set => status = value; }      
         public string PosterManifestacije { get => posterManifestacije; set => posterManifestacije = value; }
         public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
+
      
 
         //dodatno polje
         private string drzava;
         public string Drzava { get => drzava; set => drzava = value; }
+        public int Id { get => id; set => id = value; }
 
-        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, string poster, string drz, int cen)
+        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, string poster, string drz, int cen, int i)
         {
             Naziv = naz;
             TipManifestacije = tipM;
@@ -44,6 +47,7 @@ namespace MVCWebApp.Models
             PosterManifestacije = poster;
             Drzava = drz;
             CenaRegularKarte = cen;
+            Id = i;
         }
 
         public Manifestacija()
@@ -56,6 +60,7 @@ namespace MVCWebApp.Models
             Status = Status.NEAKTIVNO;
             PosterManifestacije = "";
             Drzava = "";
+            Id = 0;
         }
     }
 }

@@ -1,0 +1,59 @@
+﻿<h3>Manifestation Info</h3> 
+
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <form class="form-horizontal" role="form" action="/Prodavac/SaveManifestationInfo" method="post">
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Name: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="Naziv" value="@ViewBag.ManifestacijaPodaci.Naziv">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Type: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="TipManifestacije" value="@ViewBag.ManifestacijaPodaci.TipManifestacije">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Capacity: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="BrojMesta" value="@ViewBag.ManifestacijaPodaci.BrojMesta">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Price: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="CenaRegularKarte" value="@ViewBag.ManifestacijaPodaci.CenaRegularKarte">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Status: </label>
+            <div class="col-lg-8">
+                <input class="form-control" type="text" name="Status" value="@ViewBag.ManifestacijaPodaci.Status">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label">Poster: </label>
+            <div class="col-lg-8">
+                <img src="~/Images/@ViewBag.ManifestacijaPodaci.PosterManifestacije" alt="Nema slike" width="100" height="100" />
+                <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required="" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-lg-3 control-label"></label>
+            <div class="col-lg-8">
+                <input type="hidden" value=@ViewBag.ManifestacijaPodaci.Naziv name="Naziv" />
+                <input class="btn btn-danger" type="submit" value="Save" name="Save">
+            </div>
+        </div>
+    </form>
+    <a href="javascript:history.back()">Back</a>
+</body>
+
+</html>
