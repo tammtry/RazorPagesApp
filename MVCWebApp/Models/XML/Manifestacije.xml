@@ -5,7 +5,7 @@
     <TipManifestacije>KONCERT</TipManifestacije>
     <BrojMesta>12</BrojMesta>
     <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
-    <CenaRegularKarte>50EUR</CenaRegularKarte>
+    <CenaRegularKarte>30</CenaRegularKarte>
     <Status>NEAKTIVNO</Status>
     <PosterManifestacije>jony.jpeg</PosterManifestacije>
     <MestoOdrzavanja>
@@ -39,7 +39,7 @@
     <TipManifestacije>PREDSTAVA</TipManifestacije>
     <BrojMesta>333</BrojMesta>
     <DatumIVremeOdrzavanja>2020-06-30T21:00:00</DatumIVremeOdrzavanja>
-    <CenaRegularKarte>34</CenaRegularKarte>
+    <CenaRegularKarte>25</CenaRegularKarte>
     <Status>AKTIVNO</Status>
     <PosterManifestacije>emeli.jpg</PosterManifestacije>
     <MestoOdrzavanja>

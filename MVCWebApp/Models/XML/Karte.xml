@@ -7,7 +7,7 @@
       <TipManifestacije>KONCERT</TipManifestacije>
       <BrojMesta>2020</BrojMesta>
       <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
-      <CenaRegularKarte>50EUR</CenaRegularKarte>
+      <CenaRegularKarte>222</CenaRegularKarte>
       <Status>AKTIVNO</Status>
       <MestoOdrzavanja>
         <Ulica>Pasiceva</Ulica>
@@ -29,23 +29,23 @@
     <IdKarte>16091984</IdKarte>
     <ManifestacijaZaKojuJeRezervisana>
       <Naziv>Emeli Sande</Naziv>
-      <TipManifestacije>PREDSTAVA</TipManifestacije>
+      <TipManifestacije>KONCERT</TipManifestacije>
       <BrojMesta>2020</BrojMesta>
-      <DatumIVremeOdrzavanja>2020-06-30T21:00:00</DatumIVremeOdrzavanja>
-      <CenaRegularKarte>34EUR</CenaRegularKarte>
+      <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
+      <CenaRegularKarte>222</CenaRegularKarte>
       <Status>AKTIVNO</Status>
       <MestoOdrzavanja>
-        <Ulica>Sheez</Ulica>
-        <Broj>1</Broj>
-        <Mesto>Brooklyn</Mesto>
-        <PostanskiBroj>2332</PostanskiBroj>
+        <Ulica>Pasiceva</Ulica>
+        <Broj>21</Broj>
+        <Mesto>Beograd</Mesto>
+        <PostanskiBroj>22000</PostanskiBroj>
       </MestoOdrzavanja>
-      <PosterManifestacije>emeli.jpg</PosterManifestacije>
+      <PosterManifestacije>jony.jpeg</PosterManifestacije>
       <Drzava>Srbija</Drzava>
       <Id>1</Id>
     </ManifestacijaZaKojuJeRezervisana>
-    <DatumIVremeManifestacije>2020-06-30T21:00:00</DatumIVremeManifestacije>
-    <CenaKarte>34EUR</CenaKarte>
+    <DatumIVremeManifestacije>2020-07-25T19:00:00</DatumIVremeManifestacije>
+    <CenaKarte>25EUR</CenaKarte>
     <Kupac>sanja27</Kupac>
     <StatusKarte>ODUSTANAK</StatusKarte>
     <TipKarte>FANPIT</TipKarte>
