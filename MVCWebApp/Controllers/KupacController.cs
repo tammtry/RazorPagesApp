@@ -63,5 +63,53 @@ namespace MVCWebApp.Controllers
             korisnici.IzmeniKupca(k, stariKupac);
             return View();
         }
+
+        [HttpPost]
+        public ActionResult SearchTicketsByManifName(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.SearchTicketsByManifName(name);
+
+            return View("KupacTickets");
+        }
+
+        [HttpPost]
+        public ActionResult SearchTicketsByPrice(string from, string to)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.SearchTicketsByPrice(from, to);
+
+            return View("KupacTickets");
+        }
+
+        [HttpPost]
+        public ActionResult SortTicketsByName(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.SortTicketsByName(name);
+
+            return View("KupacTickets");
+        }
     }
 }

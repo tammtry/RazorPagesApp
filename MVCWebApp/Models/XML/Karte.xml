@@ -20,7 +20,7 @@
       <Id>0</Id>
     </ManifestacijaZaKojuJeRezervisana>
     <DatumIVremeManifestacije>2020-07-25T19:00:00</DatumIVremeManifestacije>
-    <CenaKarte>30EUR</CenaKarte>
+    <CenaKarte>30</CenaKarte>
     <Kupac>sanja27</Kupac>
     <StatusKarte>REZERVISANA</StatusKarte>
     <TipKarte>VIP</TipKarte>   
@@ -45,7 +45,32 @@
       <Id>1</Id>
     </ManifestacijaZaKojuJeRezervisana>
     <DatumIVremeManifestacije>2020-07-25T19:00:00</DatumIVremeManifestacije>
-    <CenaKarte>25EUR</CenaKarte>
+    <CenaKarte>25</CenaKarte>
+    <Kupac>sanja27</Kupac>
+    <StatusKarte>ODUSTANAK</StatusKarte>
+    <TipKarte>FANPIT</TipKarte>
+  </Karta>
+  <Karta>
+    <IdKarte>27061970</IdKarte>
+    <ManifestacijaZaKojuJeRezervisana>
+      <Naziv>Emeli Sande</Naziv>
+      <TipManifestacije>KONCERT</TipManifestacije>
+      <BrojMesta>2020</BrojMesta>
+      <DatumIVremeOdrzavanja>2021-07-25T19:00:00</DatumIVremeOdrzavanja>
+      <CenaRegularKarte>222</CenaRegularKarte>
+      <Status>AKTIVNO</Status>
+      <MestoOdrzavanja>
+        <Ulica>Pasiceva</Ulica>
+        <Broj>21</Broj>
+        <Mesto>Beograd</Mesto>
+        <PostanskiBroj>22000</PostanskiBroj>
+      </MestoOdrzavanja>
+      <PosterManifestacije>jony.jpeg</PosterManifestacije>
+      <Drzava>Srbija</Drzava>
+      <Id>1</Id>
+    </ManifestacijaZaKojuJeRezervisana>
+    <DatumIVremeManifestacije>2020-07-25T19:00:00</DatumIVremeManifestacije>
+    <CenaKarte>11</CenaKarte>
     <Kupac>sanja27</Kupac>
     <StatusKarte>ODUSTANAK</StatusKarte>
     <TipKarte>FANPIT</TipKarte>

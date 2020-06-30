@@ -704,5 +704,67 @@ namespace MVCWebApp.Models
 
             return retVal;
         }
+
+        public List<Karta> SearchTicketsByManifName(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retKarta = new List<Karta>();
+
+            foreach (var item in listaKarata)
+            {
+                if (item.ManifestacijaZaKojuJeRezervisana.Naziv.ToLower().Equals(name.ToLower()))
+                {
+                    retKarta.Add(item);
+                    //var list = retKarta.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
+                    //retManif = list;
+                }
+            }
+
+            return retKarta;
+        }
+
+        public List<Karta> SearchTicketsByPrice(string from, string to)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retKarta = new List<Karta>();
+
+            foreach(var item in listaKarata)
+            {
+                if(item.CenaKarte >= Int32.Parse(from) && item.CenaKarte <= Int32.Parse(to))
+                {
+                    retKarta.Add(item);
+                }
+                else
+                {
+
+                }
+            }
+
+            return retKarta;
+        }
+
+        public IEnumerable<Karta> SortTicketsByName(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            IEnumerable<Karta> nova = null;
+
+            if (name == "ASC")
+            {
+                nova = listaKarata.OrderBy(x => x.ManifestacijaZaKojuJeRezervisana.Naziv); //cena
+            }
+            else
+            {
+                nova = listaKarata.OrderByDescending(x => x.ManifestacijaZaKojuJeRezervisana.Naziv); //cena
+            }
+
+            return nova;
+        }
+
     }
 }

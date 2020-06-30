@@ -11,7 +11,7 @@ namespace MVCWebApp.Models
         private string idKarte;
         private Manifestacija manifestacijaZaKojuJeRezervisana;
         private DateTime datumIVremeManifestacije;
-        private string cenaKarte;
+        private int cenaKarte;
         private string kupac;
         private StatusKarte statusKarte;
         private TipKarte tipKarte;
@@ -19,12 +19,12 @@ namespace MVCWebApp.Models
         public string IdKarte { get => idKarte; set => idKarte = value; }
         public Manifestacija ManifestacijaZaKojuJeRezervisana { get => manifestacijaZaKojuJeRezervisana; set => manifestacijaZaKojuJeRezervisana = value; }
         public DateTime DatumIVremeManifestacije { get => datumIVremeManifestacije; set => datumIVremeManifestacije = value; }
-        public string CenaKarte { get => cenaKarte; set => cenaKarte = value; }
+        public int CenaKarte { get => cenaKarte; set => cenaKarte = value; }
         public string Kupac { get => kupac; set => kupac = value; }
         public StatusKarte StatusKarte { get => statusKarte; set => statusKarte = value; }
         public TipKarte TipKarte { get => tipKarte; set => tipKarte = value; }
 
-        public Karta(string id, Manifestacija manif, DateTime datum, string cena, string kup, StatusKarte statusK, TipKarte tipK)
+        public Karta(string id, Manifestacija manif, DateTime datum, int cena, string kup, StatusKarte statusK, TipKarte tipK)
         {
             IdKarte = id;
             ManifestacijaZaKojuJeRezervisana = manif;
@@ -40,7 +40,7 @@ namespace MVCWebApp.Models
             IdKarte = "";
             ManifestacijaZaKojuJeRezervisana = null; 
             DatumIVremeManifestacije = DateTime.Now;
-            CenaKarte = "244,00 dinara";
+            CenaKarte = 6;
             Kupac = "Tamara";
             StatusKarte = StatusKarte.REZERVISANA;
             TipKarte = TipKarte.FANPIT;

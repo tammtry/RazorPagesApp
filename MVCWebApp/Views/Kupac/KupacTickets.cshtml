@@ -46,25 +46,42 @@
 
     }
 
-    <form method="post" action="/Administrator/SearchUsersByName">
-        <div style="color:black">Search by first name:</div>
+    <form method="post" action="/Kupac/SearchTicketsByManifName">
+        <div style="color:black">Search by name:</div>
         <input type="text" name="name" />
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
 
-    <form style="right:auto" method="post" action="/Administrator/SearchUsersBySurname">
-        <div style="color:black">Search by surname:</div>
-        <input type="text" name="surname" />
+    <br />
+
+    <form style="right:auto" method="post" action="/Kupac/SearchTicketsByPrice">
+        <div style="color:black">Search by price:</div>
+        <label for="price">from:</label>
+        <select name="from">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="27">27</option>
+        </select>
+        <label for="price">to:</label>
+        <select name="to">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+        </select>
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
 
-    <form style="right:auto" method="post" action="/Administrator/SearchUsersByUsername">
-        <div style="color:black">Search by username:</div>
-        <input type="text" name="username" />
-        <br />
-        <input class="btn btn-danger" type="submit" value="Search" />
+    <br />
+
+    <form style="right:auto" method="post" action="/Kupac/SortTicketsByName">
+        <div style="color:black">Sort by manifestation name:</div>
+        <select name="name" id="name">
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Sort" />
     </form>
 
 </body>
