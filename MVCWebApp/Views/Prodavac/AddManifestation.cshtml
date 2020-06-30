@@ -1,0 +1,95 @@
+﻿
+<html>
+<head>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+</head>
+<body>
+    <form class="form-horizontal" method="post" action="/Prodavac/AddManifestation">
+        <fieldset>
+            <!-- Form Name -->
+            <legend>Add manifestation</legend>
+            <!-- Name input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="name">Name</label>
+                <div class="col-md-4">
+                    <input id="Naziv" name="Naziv" type="text" placeholder="Tour 2021" class="form-control input-md" required="">
+
+                </div>
+            </div>
+            <!-- Type input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="type">Type</label>
+                <div class="col-md-4">
+                    <input type="radio" name="TipManifestacije" id="TipManifestacije" value="KONCERT" required=""><font color="black">KONCERT</font>
+                    <input type="radio" name="TipManifestacije" id="TipManifestacije" value="FESTIVAL" required=""><font color="black">FESTIVAL</font>
+                    <input type="radio" name="TipManifestacije" id="TipManifestacije" value="PREDSTAVA" required=""><font color="black">PREDSTAVA</font>
+                </div>
+            </div>
+            <!-- Capacity input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="capacity">Capacity</label>
+                <div class="col-md-4">
+                    <input id="BrojMesta" name="BrojMesta" type="text" placeholder="21" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Date input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="date">Date</label>
+                <input type="date" id="DatumIVremeOdrzavanja" name="DatumIVremeOdrzavanja">
+            </div>
+
+            <!-- Price input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="price">Price</label>
+                <div class="col-md-4">
+                    <input id="CenaRegularKarte" name="CenaRegularKarte" type="text" placeholder="21" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+
+            <!-- Status input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="status">Status</label>
+                <div>
+                    <input type="radio" name="Status" id="Status" value="AKTIVNO" required=""><font color="black">AKTIVNO</font>
+                    <input type="radio" name="Status" id="Status" value="NEAKTIVNO" required=""><font color="black">NEAKTIVNO</font>
+                </div>
+            </div>
+
+            <!-- Country input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="country">Country</label>
+                <div class="col-md-4">
+                    <input id="Drzava" name="Drzava" type="text" placeholder="Tour 2021" class="form-control input-md" required="">
+
+                </div>
+            </div>
+
+            <!-- Poster input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="poster"></label>
+                <div class="col-md-8">
+                    <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required />
+                </div>
+            </div>
+
+            <!-- Button -->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="save"></label>
+                <div class="col-md-8">
+                    <button type="submit" id="Add" name="Add" class="btn btn-success">Add</button>
+                </div>
+            </div>
+        </fieldset>
+
+    </form>
+    <a href="javascript:history.back()">HOME PAGE</a>
+
+</body>
+</html>
+

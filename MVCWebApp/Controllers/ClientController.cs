@@ -57,5 +57,22 @@ namespace MVCWebApp.Controllers
             return View("Index");
         }
 
+        [HttpPost]
+        public ActionResult SearchByManifPlace(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.SearchByManifPlace(name);
+
+            return View("Index");
+        }
+
+            
     }
 }

@@ -33,7 +33,7 @@ namespace MVCWebApp.Models
         private string drzava;
         public string Drzava { get => drzava; set => drzava = value; }
 
-        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster, string drz)
+        /*public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, MestoOdrzavanja mo, string poster, string drz)
         {
             Naziv = naz;
             TipManifestacije = tipM;
@@ -44,11 +44,11 @@ namespace MVCWebApp.Models
             PosterManifestacije = poster;
             Drzava = drz;
             
-        }
+        }*/
 
-        private Manifestacija()
+        public Manifestacija()
         {
-
+       
         }
     }
 }

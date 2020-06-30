@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <ArrayOfManifestacija xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Manifestacija>
     <Naziv>JONY Europe Tour 2020</Naziv>
@@ -7,6 +7,7 @@
     <DatumIVremeOdrzavanja>2020-07-25T19:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>20</CenaRegularKarte>
     <Status>AKTIVNO</Status>
+    <PosterManifestacije>jony.jpeg</PosterManifestacije>
     <MestoOdrzavanja>
       <Ulica>Pasiceva</Ulica>
       <Broj>21</Broj>
@@ -14,7 +15,6 @@
       <PostanskiBroj>22000</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
-    <PosterManifestacije>jony.jpeg</PosterManifestacije>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Arthur Exit Festival 2020</Naziv>
@@ -23,6 +23,7 @@
     <DatumIVremeOdrzavanja>2020-07-24T22:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>55</CenaRegularKarte>
     <Status>NEAKTIVNO</Status>
+    <PosterManifestacije>arthur.jpg</PosterManifestacije>
     <MestoOdrzavanja>
       <Ulica>Xy</Ulica>
       <Broj>5</Broj>
@@ -30,7 +31,6 @@
       <PostanskiBroj>21000</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
-    <PosterManifestacije>arthur.jpg</PosterManifestacije>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Emeli Sande</Naziv>
@@ -39,6 +39,7 @@
     <DatumIVremeOdrzavanja>2020-06-30T21:00:00</DatumIVremeOdrzavanja>
     <CenaRegularKarte>34</CenaRegularKarte>
     <Status>AKTIVNO</Status>
+    <PosterManifestacije>emeli.jpg</PosterManifestacije>
     <MestoOdrzavanja>
       <Ulica>Sheez</Ulica>
       <Broj>1</Broj>
@@ -46,6 +47,21 @@
       <PostanskiBroj>2332</PostanskiBroj>
     </MestoOdrzavanja>
     <Drzava>USA</Drzava>
-    <PosterManifestacije>emeli.jpg</PosterManifestacije>
+  </Manifestacija>
+  <Manifestacija>
+    <Naziv>Predstava</Naziv>
+    <TipManifestacije>PREDSTAVA</TipManifestacije>
+    <BrojMesta>233</BrojMesta>
+    <DatumIVremeOdrzavanja>2021-06-01T00:00:00</DatumIVremeOdrzavanja>
+    <CenaRegularKarte>44</CenaRegularKarte>
+    <Status>AKTIVNO</Status>
+    <MestoOdrzavanja>
+      <Ulica>Xy</Ulica>
+      <Broj>5</Broj>
+      <Mesto>Novi Sad</Mesto>
+      <PostanskiBroj>21000</PostanskiBroj>
+    </MestoOdrzavanja>
+    <PosterManifestacije>jony.jpeg</PosterManifestacije>
+    <Drzava>Finland</Drzava>
   </Manifestacija>
 </ArrayOfManifestacija>

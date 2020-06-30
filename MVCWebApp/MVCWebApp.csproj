@@ -259,6 +259,7 @@
     <Content Include="Views\Login\ProdavacLogin.cshtml" />
     <Content Include="Views\Administrator\AllUsers.cshtml" />
     <Content Include="Views\Administrator\SearchBySomething.cshtml" />
+    <Content Include="Views\Prodavac\AddManifestation.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

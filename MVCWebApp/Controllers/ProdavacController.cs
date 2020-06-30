@@ -47,5 +47,22 @@ namespace MVCWebApp.Controllers
             korisnici.IzmeniProdavca(p, stariProdavac);
             return View();
         }
+
+        [HttpPost]
+        public ActionResult AddManifestation(Manifestacija manifestacija)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            korisnici.DodajManifestacijuUFajl(manifestacija);
+            //korisnici.AddManifestation(manifestacija);
+
+            return View();
+        }
     }
 }

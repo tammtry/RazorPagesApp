@@ -493,6 +493,62 @@ namespace MVCWebApp.Models
 
             return retManif;
         }
-        
+
+        public List<Manifestacija> SearchByManifPlace(string name)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.MestoOdrzavanja.Mesto.ToLower().Equals(name.ToLower()))
+                {
+                    retManif.Add(item);
+                    var list = retManif.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
+                    retManif = list;
+                }
+            }
+
+            return retManif;
+        }
+
+        public string AddManifestation(Manifestacija manif)
+        {
+            if (SearchForManifestation(manif.Naziv))
+            {
+                if (!listaManifestacija.Contains(manif))
+                {
+                    this.listaManifestacija.Add(manif);
+                }
+            }
+            return manif.Naziv;
+        }
+
+        public bool SearchForManifestation(string nazivManifestacije)
+        {
+            listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.Naziv.ToLower().Equals(nazivManifestacije.ToLower()))
+                {
+                    return true;
+                }
+            }
+            return false;
+
+        }
+
+        public void DodajManifestacijuUFajl(Manifestacija manif)
+        {
+
+            listaManifestacija.Add(manif);
+            manifestacijaXML.XmlSerialize(listaManifestacija);
+
+        }
+
     }
 }
