@@ -57,7 +57,7 @@ namespace MVCWebApp.Models
             BrojMesta = 11;
             DatumIVremeOdrzavanja = DateTime.Now;
             CenaRegularKarte = 111;
-            Status = Status.NEAKTIVNO;
+            Status = 0;
             PosterManifestacije = "";
             Drzava = "";
             Id = 0;

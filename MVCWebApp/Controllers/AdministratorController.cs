@@ -81,6 +81,7 @@ namespace MVCWebApp.Controllers
             return View();
         }
 
+
         [HttpPost]
         public ActionResult SearchUsersByName(string name)
         {
@@ -128,5 +129,42 @@ namespace MVCWebApp.Controllers
 
             return View("SearchBySomething");
         }
+
+        [HttpPost]
+        public ActionResult AdminPendingManifestations() //kod administratora
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.IscitajListuManifestacija();
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SavePendingManifestationStatus(Manifestacija m, string Id) //radi kod prodavca
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+            //pozovi izmenu
+
+            Manifestacija staraManifestacija = new Manifestacija();
+            staraManifestacija = korisnici.IscitajStaruManifestaciju(Id);
+            korisnici.IzmeniManifestaciju(m, staraManifestacija);
+          
+            return View();
+        }
+
+
+
     }
 }

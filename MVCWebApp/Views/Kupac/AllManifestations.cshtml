@@ -1,0 +1,45 @@
+﻿
+@foreach (var item in ViewBag.listaManifestacija)
+{
+    <form method="post" action="/Kupac/AddComment">
+        <table style="margin-top: 30px;" class="table table-dark" border="1">
+            <tr>
+                <td>Name:</td>
+                <td>
+                   @item.Naziv
+                </td>
+            </tr>
+            <tr>
+                <td>Type:</td>
+                <td>@item.TipManifestacije</td>
+            </tr>
+            <tr>
+                <td>Capacity:</td>
+                <td>@item.BrojMesta</td>
+            </tr>
+            <tr><td>Date:</td><td>@item.DatumIVremeOdrzavanja</td></tr>
+            <tr><td>Price:</td><td>@item.CenaRegularKarte</td></tr>
+            <tr><td>Status:</td><td>@item.Status</td></tr>
+            <tr>
+                <td>Poster:</td>
+                <td>
+                    <img src="~/Images/@item.PosterManifestacije" alt="Nema slike" width="100" height="100" />
+                </td>
+            </tr>
+            <tr><td><input type="hidden" value="@item.Id" name="Id" /></td></tr>
+            <tr>
+                <td colspan="2" style="text-align: center">
+                    <input type="hidden" value="@item.Id" name="Id" />
+                     
+                    <input class="btn btn-danger" type="submit" name="submit" value="Add comment" />
+                </td>
+            </tr>
+        </table>
+    </form>
+  
+    <br />
+
+}
+
+<a href="javascript:history.back()">Nazad</a>
+

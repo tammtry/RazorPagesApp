@@ -104,6 +104,24 @@ namespace MVCWebApp.Controllers
 
             return View("Index");
         }
-        
+
+        [HttpPost]
+        public ActionResult MultipleSearch(string name, string place, string country, string priceF, string priceT)   
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.MultipleSearch(name, place, country, priceF, priceT);
+
+            return View("Index");
+        }
+
+
+
     }
 }

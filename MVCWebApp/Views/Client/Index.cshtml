@@ -99,6 +99,34 @@
         <input class="btn btn-danger" type="submit" value="Sort" />
     </form>
 
+    <form method="post" action="/Client/MultipleSearch">
+        <div style="color:black">Combined search:</div>
+        <label>Name:</label>
+        <input type="text" name="name" />
+        <label>Place:</label>
+        <input type="text" name="place" />
+
+        <label>Country:</label>
+        <input type="text" name="country" />
+
+
+        <label for="price">from:</label>
+        <select name="priceF">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="15">15</option>
+        </select>
+        <label for="price">to:</label>
+        <select name="priceT">
+            <option value="10">10</option>
+            <option value="25">25</option>
+            <option value="50">50</option>
+        </select>
+
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+
 </body>
 
 </html>

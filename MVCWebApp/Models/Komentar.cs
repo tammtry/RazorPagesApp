@@ -27,7 +27,12 @@ namespace MVCWebApp.Models
             Manifestacija = m;
             Tekst = t;
             Ocena = o;
-            Id = counter++;
+            Id = id;
+        }
+
+        public Komentar()
+        {
+          
         }
     }
 }

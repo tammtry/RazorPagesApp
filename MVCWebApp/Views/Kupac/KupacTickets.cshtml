@@ -8,41 +8,42 @@
 
     @if (ViewBag.listaKarata != null)
     {
-        <table style="margin-top: 30px;" class="table table-dark">
+        
+            <table style="margin-top: 30px;" class="table table-dark">
 
-            <thead style="background-color: lightcoral">
+                <thead style="background-color: lightcoral">
 
-                <tr>
-                    <th scope="col">Ticket id</th>
-                    <th scope="col">Manifestation</th>
-                    <th scope="col">Date</th>
-                    <th scope="col">Price</th>
-                    <th scope="col">Buyer</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Type</th>
-            </thead>
-
-            <tbody>
-
-                @foreach (var item in ViewBag.listaKarata)
-                {
                     <tr>
-                        <td>@item.IdKarte</td>
-                        <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
-                        <td>@item.DatumIVremeManifestacije</td>
-                        <td>@item.CenaKarte</td>
-                        <td>@item.Kupac</td>
-                        <td>@item.StatusKarte</td>
-                        <td>@item.TipKarte</td>
+                        <th scope="col">Ticket id</th>
+                        <th scope="col">Manifestation</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Buyer</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Type</th>
+                </thead>
 
-                    </tr>
-                }
-         
+                <tbody>
 
-            </tbody>
+                    @foreach (var item in ViewBag.listaKarata)
+                    {
+                        <tr>
+                            <td>@item.IdKarte</td>
+                            <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
+                            <td>@item.DatumIVremeManifestacije</td>
+                            <td>@item.CenaKarte</td>
+                            <td>@item.Kupac</td>
+                            <td>@item.StatusKarte</td>
+                            <td>@item.TipKarte</td>
 
-        </table>
+                        </tr>
+                    }
 
+
+                </tbody>
+
+            </table>
+        
 
     }
 
@@ -76,6 +77,15 @@
     <br />
 
     <form style="right:auto" method="post" action="/Kupac/SortTicketsByName">
+        <div style="color:black">Sort by manifestation name:</div>
+        <select name="name" id="name">
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Sort" />
+    </form>
+
+    <form style="right:auto" method="post" action="/Kupac/SortTicketsByPrice">
         <div style="color:black">Sort by manifestation name:</div>
         <select name="name" id="name">
             <option value="ASC">ASC</option>

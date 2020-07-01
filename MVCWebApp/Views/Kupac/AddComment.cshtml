@@ -1,0 +1,39 @@
+﻿
+<form method="post" action="/Kupac/SaveCommentToFile">
+    <table style="margin-top: 30px;" class="table table-dark" border="1">
+        <tr>
+            <td>
+                Ocena:
+            </td>
+            <td>
+                <input type="number" name="Ocena" />
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Text:
+            </td>
+            <td>
+                <input type="text" name="Text" />
+            </td>
+        </tr>
+        <tr>
+            <td style="color:lightcoral">
+                Enter your username to leave the comment:
+            </td>
+            <td>
+                <input type="text" name="Kupac" />
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" style="text-align: center">
+                <input type="hidden" value="@ViewBag.Ocena" name="Ocena" />
+                <input type="hidden" value="@ViewBag.Tekst" name="Tekst" />
+                <input type="hidden" value="@ViewBag.Kupac" name="Kupac" />
+                <input class="btn btn-danger" type="submit" value="Comment" name="Add" />
+            </td>
+        </tr>
+    </table>
+</form>
+<a href="javascript:history.back()">Nazad</a>
+

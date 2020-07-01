@@ -32,6 +32,21 @@ namespace MVCWebApp.Controllers
         }
 
         [HttpPost]
+        public ActionResult AllManifestations()
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.IscitajListuManifestacija();
+            return View();
+        }
+
+        [HttpPost]
         public ActionResult KupacTickets(string KorisnickoIme)
         {
             Korisnici korisnici = (Korisnici)Session["korisnici"];
@@ -110,6 +125,55 @@ namespace MVCWebApp.Controllers
             ViewBag.listaKarata = korisnici.SortTicketsByName(name);
 
             return View("KupacTickets");
+        }
+
+        [HttpPost]
+        public ActionResult SortTicketsByPrice(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.SortTicketsByPrice(name);
+
+            return View("KupacTickets");
+        }
+
+        [HttpPost]
+        public ActionResult AddComment(string id)
+        {
+
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.Id = id; //preko id-a/ nemam polje za kupca unutar manifestacije (suludo jer je nije kupio i rezervisao)
+
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult SaveCommentToFile(string id, string kupac, string text, string ocena)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            korisnici.SaveCommentToFile(id, kupac, text, Int32.Parse(ocena));
+
+            return View("AddComment");
         }
     }
 }

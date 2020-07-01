@@ -81,6 +81,8 @@ namespace MVCWebApp.Controllers
             return View("Added");
         }
 
+
+
         [HttpPost]
         public ActionResult AllManifestations()
         {
@@ -96,21 +98,6 @@ namespace MVCWebApp.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult ChangeManifestation(Manifestacija manif) //INFO ABOUT THAT CURRENT MANIF // with changeable fields //ne radi
-        {
-            Korisnici korisnici = (Korisnici)Session["korisnici"];
-
-            if (korisnici == null)
-            {
-                korisnici = new Korisnici();
-                Session["korisnici"] = korisnici;
-            }
-            ViewBag.thisOne = korisnici.AddManifestacija(manif); //umesto korisnicko_ime stavi naziv
-            //ViewBag.ManifestacijaPodaci = korisnici.IscitajManifestaciju(ViewBag.thisOne);
-
-            return View();
-        }
 
         [HttpPost]
         public ActionResult SaveManifestationInfo(Manifestacija m, string Id) //radi

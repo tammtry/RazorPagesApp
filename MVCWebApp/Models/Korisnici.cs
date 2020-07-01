@@ -26,6 +26,11 @@ namespace MVCWebApp.Models
         public KartaXML kartaXML = new KartaXML();
         public List<Karta> listaKarata { get; set; }
 
+        public KomentarXML komentarXML = new KomentarXML();
+        public List<Komentar> listaKomentara { get; set; }
+
+
+
         public Korisnici()
         {
             listaKupaca = new List<Kupac>();
@@ -45,6 +50,10 @@ namespace MVCWebApp.Models
 
             listaKarata = new List<Karta>();
             listaKarata = kartaXML.XmlDeserialize();
+
+            listaKomentara = new List<Komentar>();
+            listaKomentara = komentarXML.XmlDeserialize();
+
         }
 
         // ---> [KUPAC] METODE <--- //
@@ -520,6 +529,28 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
+        public List<Manifestacija> MultipleSearch(string name, string place, string country, string priceF, string priceT)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if(item.Naziv.ToLower().Equals(name.ToLower()) && item.MestoOdrzavanja.Mesto.ToLower().Equals(place.ToLower()) && item.Drzava.ToLower().Equals(country.ToLower()) && item.CenaRegularKarte >= Int32.Parse(priceF) && item.CenaRegularKarte <= Int32.Parse(priceT))
+                {
+                    retManif.Add(item);
+                }
+                else
+                {
+
+                }
+            }
+
+            return retManif;
+        }
+
         public IEnumerable<Manifestacija> SortByManifName(string name)
         {
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
@@ -558,6 +589,8 @@ namespace MVCWebApp.Models
             return nova;
         }
 
+
+
         public void DodajManifestacijuUFajl(Manifestacija manif)
         {
 
@@ -568,6 +601,11 @@ namespace MVCWebApp.Models
             manifestacijaXML.XmlSerialize(listaManifestacija);
         }
 
+        // -------> [PENDING MANIFESTACIJE] METODE <----------
+
+ 
+
+
         public List<Manifestacija> IscitajListuManifestacija()
         {
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
@@ -575,6 +613,16 @@ namespace MVCWebApp.Models
 
             return listaManifestacija;
         }
+
+
+        // -------> [KOMENTAR] METODE <----------
+
+        public void AddComment(string kupac, string manif, string tekst, int ocena, int id)
+        {
+
+        }
+
+
 
 
         /*public Manifestacija IscitajManifestaciju(string Naziv)
@@ -747,6 +795,8 @@ namespace MVCWebApp.Models
             return retKarta;
         }
 
+
+
         public IEnumerable<Karta> SortTicketsByName(string name)
         {
             List<Karta> listaKarata = new List<Karta>();
@@ -766,5 +816,39 @@ namespace MVCWebApp.Models
             return nova;
         }
 
+        public IEnumerable<Karta> SortTicketsByPrice(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            IEnumerable<Karta> nova = null;
+
+            if (name == "ASC")
+            {
+                nova = listaKarata.OrderBy(x => x.CenaKarte); //cena
+            }
+            else
+            {
+                nova = listaKarata.OrderByDescending(x => x.CenaKarte); //cena
+            }
+
+            return nova;
+        }
+
+        public void SaveCommentToFile(string id, string kupac, string text, int ocena)
+        {
+            Random rnd = new Random();
+            Komentar k = new Komentar();
+
+            k.Id = rnd.Next(10000, 10500);
+            k.Kupac = kupac;
+            k.Tekst = text;
+            k.Ocena = ocena;
+
+            komentarXML.XmlDeserialize();
+            listaKomentara.Add(k);
+            komentarXML.XmlSerialize(listaKomentara);
+
+        }
     }
 }
