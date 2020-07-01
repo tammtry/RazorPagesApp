@@ -6,7 +6,7 @@
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
 <body>
-    <form class="form-horizontal" method="post" action="/Prodavac/AddToPendingList">
+    <form class="form-horizontal" method="post" action="/Prodavac/Add">
         <fieldset>
             <!-- Form Name -->
             <legend>Add manifestation</legend>
@@ -51,6 +51,14 @@
                 </div>
             </div>
 
+            <!-- Place input-->
+            <div class="form-group">
+                <label class="col-md-4 control-label" for="price">Place</label>
+                <div class="col-md-4">
+                    <input id="Mesto" name="Mesto" type="text" placeholder="21" class="form-control input-md" required="">
+
+                </div>
+            </div>
 
             <!-- Status input-->
             <div class="form-group">
@@ -73,7 +81,7 @@
             <div class="form-group">
                 <label class="col-md-4 control-label" for="poster"></label>
                 <div class="col-md-8">
-                    <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required=""/>
+                    <input type="file" name="PosterManifestacije" accept="image/gif, image/jpeg, image/png" required="" />
                 </div>
             </div>
 

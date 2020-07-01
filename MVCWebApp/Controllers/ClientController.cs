@@ -69,7 +69,23 @@ namespace MVCWebApp.Controllers
             }
 
             ViewBag.listaManifestacija = korisnici.SearchByManifPlace(name);
+            
+            return View("Index");
+        }
 
+        [HttpPost]
+        public ActionResult SortByManifPlace(string place)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.SortByManifPlace(place);
+           
             return View("Index");
         }
 
@@ -121,6 +137,37 @@ namespace MVCWebApp.Controllers
             return View("Index");
         }
 
+        [HttpPost]
+        public ActionResult SearchManifByPrice(string from, string to)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.SearchManifByPrice(from, to);
+
+            return View("Index");
+        }
+
+        [HttpPost]
+        public ActionResult FilterByType(string type)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaManifestacija = korisnici.FilterByType(type);
+
+            return View("Index");
+        }
 
 
     }

@@ -273,6 +273,7 @@
     <Content Include="Views\Administrator\SavePendingManifestationStatus.cshtml" />
     <Content Include="Views\Kupac\AllManifestations.cshtml" />
     <Content Include="Views\Kupac\AddComment.cshtml" />
+    <Content Include="Views\Administrator\AdminAllTickets.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

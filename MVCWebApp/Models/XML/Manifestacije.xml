@@ -8,14 +8,9 @@
     <CenaRegularKarte>30</CenaRegularKarte>
     <Status>NEAKTIVNO</Status>
     <PosterManifestacije>jony.jpeg</PosterManifestacije>
-    <MestoOdrzavanja>
-      <Ulica>Pasiceva</Ulica>
-      <Broj>21</Broj>
-      <Mesto>Beograd</Mesto>
-      <PostanskiBroj>22000</PostanskiBroj>
-    </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
     <Id>0</Id>
+    <Mesto>Beograd</Mesto>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Arthur Exit Festival 2020</Naziv>
@@ -25,14 +20,9 @@
     <CenaRegularKarte>55</CenaRegularKarte>
     <Status>NEAKTIVNO</Status>
     <PosterManifestacije>arthur.jpg</PosterManifestacije>
-    <MestoOdrzavanja>
-      <Ulica>Xy</Ulica>
-      <Broj>5</Broj>
-      <Mesto>Novi Sad</Mesto>
-      <PostanskiBroj>21000</PostanskiBroj>
-    </MestoOdrzavanja>
     <Drzava>Serbia</Drzava>
     <Id>1</Id>
+    <Mesto>Novi Sad</Mesto>
   </Manifestacija>
   <Manifestacija>
     <Naziv>Emeli Sande</Naziv>
@@ -42,13 +32,20 @@
     <CenaRegularKarte>25</CenaRegularKarte>
     <Status>AKTIVNO</Status>
     <PosterManifestacije>emeli.jpg</PosterManifestacije>
-    <MestoOdrzavanja>
-      <Ulica>Sheez</Ulica>
-      <Broj>1</Broj>
-      <Mesto>Brooklyn</Mesto>
-      <PostanskiBroj>2332</PostanskiBroj>
-    </MestoOdrzavanja>
     <Drzava>USA</Drzava>
     <Id>2</Id>
+    <Mesto>Brooklyn</Mesto>
+  </Manifestacija>
+  <Manifestacija>
+    <Naziv>Britney</Naziv>
+    <TipManifestacije>FESTIVAL</TipManifestacije>
+    <BrojMesta>2131</BrojMesta>
+    <DatumIVremeOdrzavanja>2020-07-26T00:00:00</DatumIVremeOdrzavanja>
+    <CenaRegularKarte>30</CenaRegularKarte>
+    <Status>NEAKTIVNO</Status>
+    <PosterManifestacije>jony.jpeg</PosterManifestacije>
+    <Drzava>UAE</Drzava>
+    <Id>0</Id>
+    <Mesto>New York</Mesto>
   </Manifestacija>
 </ArrayOfManifestacija>

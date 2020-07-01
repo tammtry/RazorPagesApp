@@ -1,0 +1,110 @@
+﻿<html>
+
+<head>
+
+</head>
+
+<body>
+
+    @if (ViewBag.listaKarata != null)
+    {
+
+        <table style="margin-top: 30px;" class="table table-dark">
+
+            <thead style="background-color: lightcoral">
+
+                <tr>
+                    <th scope="col">Ticket id</th>
+                    <th scope="col">Manifestation</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Buyer</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Type</th>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.listaKarata)
+                {
+                    <tr>
+                        <td>@item.IdKarte</td>
+                        <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
+                        <td>@item.DatumIVremeManifestacije</td>
+                        <td>@item.CenaKarte</td>
+                        <td>@item.Kupac</td>
+                        <td>@item.StatusKarte</td>
+                        <td>@item.TipKarte</td>
+
+                    </tr>
+                }
+
+
+            </tbody>
+
+        </table>
+
+        <form style="right:auto" method="post" action="/Administrator/SearchTicketsByPrice">
+            <div style="color:black">Search by price:</div>
+            <label for="price">from:</label>
+            <select name="from">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="27">27</option>
+            </select>
+            <label for="price">to:</label>
+            <select name="to">
+                <option value="10">10</option>
+                <option value="20">20</option>
+                <option value="30">30</option>
+            </select>
+            <br />
+            <input class="btn btn-danger" type="submit" value="Search" />
+        </form>
+
+        <br />
+
+        <form method="post" action="/Administrator/AdminTicketsFilterByStatus">
+            <div style="color:black">Filter by status:</div>
+            <select name="name" id="name">
+                <option value="REZERVISANA">REZERVISANA</option>
+                <option value="ODUSTANAK">ODUSTANAK</option>
+            </select>
+            <input class="btn btn-danger" type="submit" value="Filter" />
+        </form>
+
+        <br />
+
+        <form method="post" action="/Administrator/AdminTicketsFilterByType">
+            <div style="color:black">Filter by status:</div>
+            <select name="name" id="name">
+                <option value="VIP">VIP</option>
+                <option value="REGULAR">REGULAR</option>
+                <option value="FANPIT">FANPIT</option>
+            </select>
+            <input class="btn btn-danger" type="submit" value="Filter" />
+        </form>
+        <br />
+        <form method="post" action="/Administrator/AdminSearchTicketByManifName">
+            <div style="color:black">Search by manifestation name:</div>
+            <input type="text" name="name" />
+            <br />
+            <input class="btn btn-danger" type="submit" value="Search" />
+        </form>
+        <br />
+        <form method="post" action="/Administrator/AdminSortTicketByPrice">
+            <div style="color:black">Sort by manifestation ticket price:</div>
+            <select name="price" id="price">
+                <option value="ASC">ASC</option>
+                <option value="DESC">DESC</option>
+            </select>
+            <input class="btn btn-danger" type="submit" value="Sort" />
+        </form>
+        <a href="javascript:history.back()">Back</a>
+    }
+
+</body>
+
+</html>
+
+

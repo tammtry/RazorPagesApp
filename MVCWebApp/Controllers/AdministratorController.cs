@@ -47,6 +47,8 @@ namespace MVCWebApp.Controllers
             return View();
         }
 
+
+
         [HttpPost]
         public ActionResult AddProdavac(Prodavac prodavac)
         {
@@ -81,6 +83,105 @@ namespace MVCWebApp.Controllers
             return View();
         }
 
+        [HttpPost]
+        public ActionResult SearchTicketsByPrice(string from, string to)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.SearchTicketsByPrice(from, to);
+
+            return View("AdminAllTickets");
+        }
+
+        [HttpPost]
+        public ActionResult AdminSearchTicketByManifName(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.AdminSearchTicketByManifName(name);
+
+            return View("AdminAllTickets");
+        }
+
+        [HttpPost]
+        public ActionResult AdminSortTicketByPrice(string price)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.AdminSortTicketByPrice(price);
+
+            return View("AdminAllTickets");
+        }
+        
+
+        [HttpPost]
+        public ActionResult AdminTicketsFilterByStatus(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.AdminTicketsFilterByStatus(name);
+
+            return View("AdminAllTickets");
+        }
+
+        [HttpPost]
+        public ActionResult AdminTicketsFilterByType(string name)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKarata = korisnici.AdminTicketsFilterByType(name);
+
+            return View("AdminAllTickets");
+        }
+
+        
+        [HttpPost]
+        public ActionResult AdminAllTickets()
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            //ViewBag.listaKupaca = korisnici.IscitajListuKupaca();
+            // ViewBag.listaProdavaca = korisnici.IscitajListuProdavaca();
+            ViewBag.listaKarata = korisnici.IscitajListuKarataAdmin();
+            return View();
+        }
+
 
         [HttpPost]
         public ActionResult SearchUsersByName(string name)
@@ -110,6 +211,22 @@ namespace MVCWebApp.Controllers
             }
 
             ViewBag.listaKorisnika = korisnici.SearchUsersBySurname(surname);
+
+            return View("SearchBySomething");
+        }
+
+        [HttpPost]
+        public ActionResult FilterUsersByRole(string type)
+        {
+            Korisnici korisnici = (Korisnici)Session["korisnici"];
+
+            if (korisnici == null)
+            {
+                korisnici = new Korisnici();
+                Session["korisnici"] = korisnici;
+            }
+
+            ViewBag.listaKorisnika = korisnici.FilterUsersByRole(type);
 
             return View("SearchBySomething");
         }

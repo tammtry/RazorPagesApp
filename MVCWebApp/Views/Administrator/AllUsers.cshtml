@@ -75,6 +75,16 @@
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
+    <br />
+    <form style="right:auto" method="post" action="/Administrator/FilterUsersByRole">
+        <div style="color:black">Filter by role:</div>
+        <select name="type" id="type">
+            <option value="PRODAVAC">PRODAVAC</option>
+            <option value="KUPAC">KUPAC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Filter" />
+    </form>
+    <a href="javascript:history.back()">Back</a>
 
 </body>
 

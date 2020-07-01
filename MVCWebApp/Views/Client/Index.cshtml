@@ -48,7 +48,7 @@
                         <td>@item.DatumIVremeOdrzavanja</td>
                         <td>@item.CenaRegularKarte</td>
                         <td>@item.Status</td>
-                        <td>@item.MestoOdrzavanja.Ulica @item.MestoOdrzavanja.Broj, @item.MestoOdrzavanja.Mesto, @item.MestoOdrzavanja.PostanskiBroj</td>
+                        <td>@item.Mesto</td>
                         <td>@item.Drzava</td>
                         <td><img src="~/Images/@item.PosterManifestacije" alt="Nema slike" width="200" height="100" /></td>
 
@@ -60,27 +60,50 @@
         </table>
     }
 
+    <form style="right:auto" method="post" action="/Client/SearchManifByPrice">
+        <div style="color:black">Search by price:</div>
+        <label for="price">from:</label>
+        <select name="from">
+            <option value="1">1</option>
+            <option value="5">5</option>
+            <option value="10">10</option>
+            <option value="20">10</option>
+            <option value="30">10</option>
+        </select>
+        <label for="price">to:</label>
+        <select name="to">
+            <option value="10">10</option>
+            <option value="20">20</option>
+            <option value="30">30</option>
+            <option value="40">40</option>
+            <option value="50">50</option>
+            <option value="100">100</option>
+        </select>
+        <br />
+        <input class="btn btn-danger" type="submit" value="Search" />
+    </form>
+    <br />
     <form method="post" action="/Client/SearchManifByName">
         <div style="color:black">Search by manifestation name:</div>
         <input type="text" name="name" />
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
-
+    <br />
     <form method="post" action="/Client/SearchByManifCountry">
         <div style="color:black">Search by manifestation country:</div>
         <input type="text" name="name" />
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
-
+    <br />
     <form method="post" action="/Client/SearchByManifPlace">
         <div style="color:black">Search by manifestation place:</div>
         <input type="text" name="name" />
         <br />
         <input class="btn btn-danger" type="submit" value="Search" />
     </form>
-
+    <br />
     <form method="post" action="/Client/SortByManifName">
         <div style="color:black">Sort by manifestation name:</div>
         <select name="name" id="name">
@@ -89,7 +112,7 @@
         </select>
         <input class="btn btn-danger" type="submit" value="Sort" />
     </form>
-
+    <br />
     <form method="post" action="/Client/SortByManifPrice">
         <div style="color:black">Sort by manifestation ticket price:</div>
         <select name="price" id="price">
@@ -98,7 +121,26 @@
         </select>
         <input class="btn btn-danger" type="submit" value="Sort" />
     </form>
-
+    <br />
+    <form method="post" action="/Client/SortByManifPlace">
+        <div style="color:black">Sort by manifestation place:</div>
+        <select name="place" id="place">
+            <option value="ASC">ASC</option>
+            <option value="DESC">DESC</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Sort" />
+    </form>
+    <br />
+    <form method="post" action="/Client/FilterByType">
+        <div style="color:black">Filter by type:</div>
+        <select name="type" id="type">
+            <option value="KONCERT">KONCERT</option>
+            <option value="PREDSTAVA">PREDSTAVA</option>
+            <option value="FESTIVAL">FESTIVAL</option>
+        </select>
+        <input class="btn btn-danger" type="submit" value="Filter" />
+    </form>
+    <br />
     <form method="post" action="/Client/MultipleSearch">
         <div style="color:black">Combined search:</div>
         <label>Name:</label>

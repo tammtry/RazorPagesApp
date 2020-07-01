@@ -236,6 +236,14 @@ namespace MVCWebApp.Models
 
         }
 
+        public List<Karta> IscitajListuKarataAdmin()
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            return listaKarata;
+        }
+
         public List<Kupac> IscitajListuKupaca()
         {
             List<Kupac> listaKupaca = new List<Kupac>();
@@ -373,6 +381,44 @@ namespace MVCWebApp.Models
 
         }
 
+        public Tuple<List<Kupac>, List<Prodavac>> FilterUsersByRole(string type)
+        {
+            List<Kupac> listaKupaca = IscitajListuKupaca();
+            List<Prodavac> listaProdavaca = IscitajListuProdavaca();
+
+            Tuple<List<Kupac>, List<Prodavac>> retUsers = new Tuple<List<Kupac>, List<Prodavac>>(listaKupaca, listaProdavaca);
+
+            List<Kupac> retListaKupaca = new List<Kupac>();
+            List<Prodavac> retListaProdavaca = new List<Prodavac>();
+
+            List<Kupac> retKupac = new List<Kupac>();
+            List<Prodavac> retProdavac = new List<Prodavac>();
+
+            foreach (var item in retUsers.Item1)
+            {
+                if (item.Uloga.ToString().Equals(type))
+                {
+                    retListaKupaca.Add(item);
+                }
+            }
+
+            foreach (var item2 in retUsers.Item2)
+            {
+                if (item2.Uloga.ToString().Equals(type))
+                {
+                    retListaProdavaca.Add(item2);
+                }
+            }
+
+            Tuple<List<Kupac>, List<Prodavac>> retCurrent = new Tuple<List<Kupac>, List<Prodavac>>(retListaKupaca, retListaProdavaca);
+
+            return retCurrent;
+
+        }
+        
+
+
+
         // ---> [PRODAVAC] METODE <--- //
 
         public void DodajProdavcaUFajl(Prodavac prodavac)
@@ -489,6 +535,28 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
+        public List<Karta> AdminSearchTicketByManifName(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retManif = new List<Karta>();
+
+            foreach (var item in listaKarata)
+            {
+                if (item.ManifestacijaZaKojuJeRezervisana.Naziv.ToLower().Equals(name.ToLower()))
+                {
+                    retManif.Add(item);
+
+                }
+            }
+
+            return retManif;
+        }
+
+
+       
+
         public List<Manifestacija> SearchByManifCountry(string name)
         {
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
@@ -518,7 +586,7 @@ namespace MVCWebApp.Models
 
             foreach (var item in listaManifestacija)
             {
-                if (item.MestoOdrzavanja.Mesto.ToLower().Equals(name.ToLower()))
+                if (item.Mesto.ToLower().Equals(name.ToLower()))
                 {
                     retManif.Add(item);
                     var list = retManif.OrderBy(x => x.DatumIVremeOdrzavanja.Date).ToList();
@@ -529,6 +597,8 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
+       
+
         public List<Manifestacija> MultipleSearch(string name, string place, string country, string priceF, string priceT)
         {
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
@@ -538,7 +608,7 @@ namespace MVCWebApp.Models
 
             foreach (var item in listaManifestacija)
             {
-                if(item.Naziv.ToLower().Equals(name.ToLower()) && item.MestoOdrzavanja.Mesto.ToLower().Equals(place.ToLower()) && item.Drzava.ToLower().Equals(country.ToLower()) && item.CenaRegularKarte >= Int32.Parse(priceF) && item.CenaRegularKarte <= Int32.Parse(priceT))
+                if(item.Naziv.ToLower().Equals(name.ToLower()) && item.Mesto.ToLower().Equals(place.ToLower()) && item.Drzava.ToLower().Equals(country.ToLower()) && item.CenaRegularKarte >= Int32.Parse(priceF) && item.CenaRegularKarte <= Int32.Parse(priceT))
                 {
                     retManif.Add(item);
                 }
@@ -551,6 +621,26 @@ namespace MVCWebApp.Models
             return retManif;
         }
 
+        public IEnumerable<Manifestacija> SortByManifPlace(string place)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            IEnumerable<Manifestacija> nova = null;
+
+            if (place == "ASC")
+            {
+                nova = listaManifestacija.OrderBy(x => x.Mesto); 
+            }
+            else
+            {
+                nova = listaManifestacija.OrderByDescending(x => x.Mesto); 
+            }
+
+            return nova;
+        }
+
+
         public IEnumerable<Manifestacija> SortByManifName(string name)
         {
             List<Manifestacija> listaManifestacija = new List<Manifestacija>();
@@ -560,11 +650,11 @@ namespace MVCWebApp.Models
 
             if (name == "ASC")
             {       
-              nova = listaManifestacija.OrderBy(x=>x.Naziv); //cena
+              nova = listaManifestacija.OrderBy(x=>x.Naziv); 
             }
             else 
             {
-                nova = listaManifestacija.OrderByDescending(x => x.Naziv); //cena
+                nova = listaManifestacija.OrderByDescending(x => x.Naziv); 
             }
             
             return nova;
@@ -589,6 +679,25 @@ namespace MVCWebApp.Models
             return nova;
         }
 
+        public IEnumerable<Karta> AdminSortTicketByPrice(string price)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            IEnumerable<Karta> nova = null;
+
+            if (price == "ASC")
+            {
+                nova = listaKarata.OrderBy(x => x.CenaKarte).ToList(); //cena
+            }
+            else
+            {
+                nova = listaKarata.OrderByDescending(x => x.CenaKarte).ToList(); //cena
+            }
+
+            return nova;
+        }
+        
 
 
         public void DodajManifestacijuUFajl(Manifestacija manif)
@@ -734,6 +843,9 @@ namespace MVCWebApp.Models
             }
         }
 
+
+
+
         // ---> [KARTA] METODE <--- //
 
         public List<Karta> IscitajListuKarata(string KorisnickoIme) //kod domacina
@@ -795,6 +907,82 @@ namespace MVCWebApp.Models
             return retKarta;
         }
 
+        public List<Manifestacija> SearchManifByPrice(string from, string to)
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.CenaRegularKarte >= Int32.Parse(from) && item.CenaRegularKarte <= Int32.Parse(to))
+                {
+                    retManif.Add(item);
+                }
+                else
+                {
+
+                }
+            }
+
+            return retManif;
+        }
+        
+
+        public List<Karta> AdminTicketsFilterByStatus(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retKarta = new List<Karta>();
+
+            foreach(var item in listaKarata)
+            {
+                if(item.StatusKarte.ToString().Equals(name))
+                {
+                    retKarta.Add(item);
+                }
+            }
+
+            return retKarta;
+        }
+
+        public List<Manifestacija> FilterByType(string type) //manif at home page
+        {
+            List<Manifestacija> listaManifestacija = new List<Manifestacija>();
+            listaManifestacija = manifestacijaXML.XmlDeserialize();
+
+            List<Manifestacija> retManif = new List<Manifestacija>();
+
+            foreach (var item in listaManifestacija)
+            {
+                if (item.TipManifestacije.ToString().Equals(type))
+                {
+                    retManif.Add(item);
+                }
+            }
+
+            return retManif;
+        }
+
+        public List<Karta> AdminTicketsFilterByType(string name)
+        {
+            List<Karta> listaKarata = new List<Karta>();
+            listaKarata = kartaXML.XmlDeserialize();
+
+            List<Karta> retKarta = new List<Karta>();
+
+            foreach (var item in listaKarata)
+            {
+                if (item.TipKarte.ToString().Equals(name))
+                {
+                    retKarta.Add(item);
+                }
+            }
+
+            return retKarta;
+        }
 
 
         public IEnumerable<Karta> SortTicketsByName(string name)

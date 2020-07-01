@@ -16,9 +16,10 @@ namespace MVCWebApp.Models
         private DateTime datumIVremeOdrzavanja;
         private int cenaRegularKarte;
         private Status status;
-        private MestoOdrzavanja mestoOdrzavanja;
+        //private MestoOdrzavanja mestoOdrzavanja;
         private string posterManifestacije;
         private int id;
+        private string mesto;
 
         public string Naziv { get => naziv; set => naziv = value; }
         public TipManifestacije TipManifestacije { get => tipManifestacije; set => tipManifestacije = value; }
@@ -27,7 +28,7 @@ namespace MVCWebApp.Models
         public int CenaRegularKarte { get => cenaRegularKarte; set => cenaRegularKarte = value; }
         public Status Status { get => status; set => status = value; }      
         public string PosterManifestacije { get => posterManifestacije; set => posterManifestacije = value; }
-        public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
+        //public MestoOdrzavanja MestoOdrzavanja { get => mestoOdrzavanja; set => mestoOdrzavanja = value; }
 
      
 
@@ -35,15 +36,16 @@ namespace MVCWebApp.Models
         private string drzava;
         public string Drzava { get => drzava; set => drzava = value; }
         public int Id { get => id; set => id = value; }
+        public string Mesto { get => mesto; set => mesto = value; }
 
-        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, Status s, string poster, string drz, int cen, int i)
+        public Manifestacija(string naz, TipManifestacije tipM, int brMesta, DateTime datumVr, string mest, Status s, string poster, string drz, int cen, int i)
         {
             Naziv = naz;
             TipManifestacije = tipM;
             BrojMesta = brMesta;
             DatumIVremeOdrzavanja = datumVr;
             Status = s;
-            //MestoOdrzavanja = mo;
+            Mesto = mesto;
             PosterManifestacije = poster;
             Drzava = drz;
             CenaRegularKarte = cen;
@@ -55,6 +57,7 @@ namespace MVCWebApp.Models
             Naziv = "";
             TipManifestacije = TipManifestacije.FESTIVAL;
             BrojMesta = 11;
+            Mesto = "";
             DatumIVremeOdrzavanja = DateTime.Now;
             CenaRegularKarte = 111;
             Status = 0;

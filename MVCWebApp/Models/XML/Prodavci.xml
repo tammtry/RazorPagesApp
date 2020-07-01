@@ -17,4 +17,37 @@
       <TrazeniBrojBodova>0</TrazeniBrojBodova>
     </TipKorisnika>
   </Prodavac>
+  <Prodavac>
+    <KorisnickoIme>zoki</KorisnickoIme>
+    <Lozinka>zoki</Lozinka>
+    <Ime>Zoran</Ime>
+    <Prezime>Zoric</Prezime>
+    <DatumRodjenja>2020-07-19</DatumRodjenja>
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <SveKarteBezObziraNaStatus />
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
+  <Prodavac>
+    <KorisnickoIme />
+    <Lozinka />
+    <Ime />
+    <Prezime />
+    <DatumRodjenja />
+    <Pol>MUSKO</Pol>
+    <Uloga>PRODAVAC</Uloga>
+    <Manifestacije />
+    <BrojBodova>0</BrojBodova>
+    <TipKorisnika>
+      <ImeTipa>ZLATNI</ImeTipa>
+      <Popust>0</Popust>
+      <TrazeniBrojBodova>0</TrazeniBrojBodova>
+    </TipKorisnika>
+  </Prodavac>
 </ArrayOfProdavac>

@@ -8,42 +8,42 @@
 
     @if (ViewBag.listaKarata != null)
     {
-        
-            <table style="margin-top: 30px;" class="table table-dark">
 
-                <thead style="background-color: lightcoral">
+        <table style="margin-top: 30px;" class="table table-dark">
 
+            <thead style="background-color: lightcoral">
+
+                <tr>
+                    <th scope="col">Ticket id</th>
+                    <th scope="col">Manifestation</th>
+                    <th scope="col">Date</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Buyer</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Type</th>
+            </thead>
+
+            <tbody>
+
+                @foreach (var item in ViewBag.listaKarata)
+                {
                     <tr>
-                        <th scope="col">Ticket id</th>
-                        <th scope="col">Manifestation</th>
-                        <th scope="col">Date</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">Buyer</th>
-                        <th scope="col">Status</th>
-                        <th scope="col">Type</th>
-                </thead>
+                        <td>@item.IdKarte</td>
+                        <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
+                        <td>@item.DatumIVremeManifestacije</td>
+                        <td>@item.CenaKarte</td>
+                        <td>@item.Kupac</td>
+                        <td>@item.StatusKarte</td>
+                        <td>@item.TipKarte</td>
 
-                <tbody>
-
-                    @foreach (var item in ViewBag.listaKarata)
-                    {
-                        <tr>
-                            <td>@item.IdKarte</td>
-                            <td>@item.ManifestacijaZaKojuJeRezervisana.Naziv</td>
-                            <td>@item.DatumIVremeManifestacije</td>
-                            <td>@item.CenaKarte</td>
-                            <td>@item.Kupac</td>
-                            <td>@item.StatusKarte</td>
-                            <td>@item.TipKarte</td>
-
-                        </tr>
-                    }
+                    </tr>
+                }
 
 
-                </tbody>
+            </tbody>
 
-            </table>
-        
+        </table>
+
 
     }
 
@@ -93,7 +93,7 @@
         </select>
         <input class="btn btn-danger" type="submit" value="Sort" />
     </form>
-
+    <a href="javascript:history.back()">Back</a>
 </body>
 
 </html>
