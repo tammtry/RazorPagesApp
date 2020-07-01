@@ -6,7 +6,7 @@
             <tr>
                 <td>Name:</td>
                 <td>
-                   @item.Naziv
+                    @item.Naziv
                 </td>
             </tr>
             <tr>
@@ -17,26 +17,39 @@
                 <td>Capacity:</td>
                 <td>@item.BrojMesta</td>
             </tr>
-            <tr><td>Date:</td><td>@item.DatumIVremeOdrzavanja</td></tr>
-            <tr><td>Price:</td><td>@item.CenaRegularKarte</td></tr>
-            <tr><td>Status:</td><td>@item.Status</td></tr>
+            <tr>
+                <td>Date:</td>
+                <td>@item.DatumIVremeOdrzavanja</td>
+            </tr>
+            <tr>
+                <td>Price:</td>
+                <td>@item.CenaRegularKarte</td>
+            </tr>
+            <tr>
+                <td>Status:</td>
+                <td>@item.Status</td>
+            </tr>
             <tr>
                 <td>Poster:</td>
                 <td>
                     <img src="~/Images/@item.PosterManifestacije" alt="Nema slike" width="100" height="100" />
                 </td>
             </tr>
-            <tr><td><input type="hidden" value="@item.Id" name="Id" /></td></tr>
+            <tr>
+                <td>
+                    <input type="hidden" value="@item.Id" name="Id" />
+                </td>
+            </tr>
             <tr>
                 <td colspan="2" style="text-align: center">
                     <input type="hidden" value="@item.Id" name="Id" />
-                     
+
                     <input class="btn btn-danger" type="submit" name="submit" value="Add comment" />
                 </td>
             </tr>
         </table>
     </form>
-  
+
     <br />
 
 }
